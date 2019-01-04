@@ -70,19 +70,17 @@ N.B.
 
 |  | Thursday 09:00-10:00 | Thursday 11:00-12:00 | Friday 16:00-17:00 |
 | -------------------|  -------------------| :-----------------: | :------------------: |
-| Week 1 |  | |
-| Week 1 | 09/1/17 LECTURE 1 [Introduction to course; Environmental Remote Sensing](coursenotes/lecture1.pdf) | 14/1/16 COMPUTING 1 [Introductory Computing](unix.md)|14/1/16 COMPUTING 2 [Image Display](ImageDisplay.ipynb)|
-| Week 2 | 18/1/16 LECTURE 2 [Image Display and Enhancement](coursenotes/lecture2.pdf) | 21/1/16 COMPUTING 2 [Data download](Download.ipynb)| 21/1/16 COMPUTING 2 [Image Display](ImageDisplay.ipynb)|
-| Week 3 | 25/1/16 LECTURE 3 [Spatial Information](coursenotes/lecture3.pdf) | 28/1/16 COMPUTING 2 [Spatial Filtering](SpatialFiltering.ipynb)| 28/1/16 COMPUTING 2 [Spatial Filtering](SpatialFiltering.ipynb)|
-| Week 4 | 01/2/16 LECTURE 4 [Image Classification](coursenotes/lecture4.pdf) | 04/2/16 COMPUTING 3 [Classification](Classification.ipynb)| 04/2/16 COMPUTING 3 [Classification](Classification.ipynb)|
-| Week 5 | 08/2/16 LECTURE 5 [Spectral Information](coursenotes/lecture5.pdf) | 11/2/16 COMPUTING 3 [Classification](Classification.ipynb)| 11/2/16 COMPUTING 3 [Classification](Classification.ipynb)|
+| Week 1 |  | | 11/1/19 LECTURE 1 [Introduction to course; Environmental Remote Sensing](coursenotes/lecture1.pdf) |
+| Week 2 | 17/1/19 COMPUTING 1 [Introductory Computing](unix.md)|17/1/19 COMPUTING 2 [Image Display](ImageDisplay.ipynb)| 18/1/19 LECTURE 2 [Image Display and Enhancement](coursenotes/lecture2.pdf) |
+| Week 3 | 24/1/19 COMPUTING 2 [Data download](Download.ipynb)| 24/1/19 COMPUTING 2 [Image Display](ImageDisplay.ipynb)| 25/1/19 LECTURE 3 [Spatial Information](coursenotes/lecture3.pdf) |
+| Week 4  | 31/1/19 COMPUTING 2 [Spatial Filtering](SpatialFiltering.ipynb)| 31/1/19 COMPUTING 2 [Spatial Filtering](SpatialFiltering.ipynb)| 01/2/19 LECTURE 4 [Image Classification](coursenotes/lecture4.pdf) | 
+| Week 5 | 04/2/16 COMPUTING 3 [Classification](Classification.ipynb)| 04/2/16 COMPUTING 3 [Classification](Classification.ipynb)| 05/2/19 LECTURE 5 [Spectral Information](coursenotes/lecture5.pdf) |
 | Week 6 | READING WEEK | READING WEEK | READING WEEK |
-| Week 7 | 22/2/16 LECTURE 6 [Environmental Modelling: I](coursenotes/modelling1.pdf) | 25/2/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)| 25/2/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)|
-| Week 8 | 29/2/16 LECTURE 6 [Environmental Modelling: II](coursenotes/modelling2.pdf)| 03/3/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)|
-| Week 9 | 07/3/16  COMPUTING 4 [Project](http://proflewis.github.io/Geog0027_Coursework/)| | 10/3/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)| 10/3/16 COMPUTING 4 [Project](project)|
-| Week 10 | 14/3/15 PROJECT DISCUSSIONS (Physics A1/3)| 17/3/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)| 17/3/16 COMPUTING 4 [Project](project)|
-| Week 11 | 21/3/16 [Project](http://proflewis.github.io/Geog0027_Coursework/)| | |
-||[Topic Revision Notes](coursenotes/lecture8_2011.pdf)||
+| Week 7 |  21/2/19 COMPUTING 3 [Classification](Classification.ipynb)| 21/2/19 COMPUTING 3 [Classification](Classification.ipynb)| 22/2/19 LECTURE 6 [Environmental Modelling: I](coursenotes/modelling1.pdf) |
+| Week 8 |  28/2/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 28/2/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 1/3/19 LECTURE 6 [Environmental Modelling: II](coursenotes/modelling2.pdf)|
+| Week 9 |  07/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 07/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 08/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)|
+| Week 10 |  14/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 14/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 15/3/16 Project Discussion|
+| Week 11 |  21/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 21/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)|  No lecture |
 
 
 Lectures in [Pearson G07](https://www.ucl.ac.uk/maps/pearson)
