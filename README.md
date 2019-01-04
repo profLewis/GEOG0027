@@ -5,6 +5,9 @@
 ## Course Tutors
 
 [Prof. P. Lewis](http://www2.geog.ucl.ac.uk/~plewis)
+
+[Prof. M. Disney](http://www2.geog.ucl.ac.uk/~mdisney)
+
 [Dr Qingling Wu](https://www.geog.ucl.ac.uk/people/research-staff/qingling-wu)
 
 Department of Geography
