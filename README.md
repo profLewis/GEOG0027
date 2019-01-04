@@ -55,7 +55,7 @@ Usual range 100-150 for 1/2 course unit
 
 ##### Assessment
 
-+ 100% Assessed Practical (3500 words) - submission date standard 2nd year submission date i.e. Weds 23th March 2016 (12 noon).
++ 100% Assessed Practical (3500 words) - submission date standard 2nd year submission date i.e. Weds 27th March 2019 (12 noon).
 
 N.B.
 
@@ -70,6 +70,7 @@ N.B.
 
 |  | Thursday 09:00-10:00 | Thursday 11:00-12:00 | Friday 16:00-17:00 |
 | -------------------|  -------------------| :-----------------: | :------------------: |
+| Week 1 |  | |
 | Week 1 | 09/1/17 LECTURE 1 [Introduction to course; Environmental Remote Sensing](coursenotes/lecture1.pdf) | 14/1/16 COMPUTING 1 [Introductory Computing](unix.md)|14/1/16 COMPUTING 2 [Image Display](ImageDisplay.ipynb)|
 | Week 2 | 18/1/16 LECTURE 2 [Image Display and Enhancement](coursenotes/lecture2.pdf) | 21/1/16 COMPUTING 2 [Data download](Download.ipynb)| 21/1/16 COMPUTING 2 [Image Display](ImageDisplay.ipynb)|
 | Week 3 | 25/1/16 LECTURE 3 [Spatial Information](coursenotes/lecture3.pdf) | 28/1/16 COMPUTING 2 [Spatial Filtering](SpatialFiltering.ipynb)| 28/1/16 COMPUTING 2 [Spatial Filtering](SpatialFiltering.ipynb)|
