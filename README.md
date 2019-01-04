@@ -78,9 +78,9 @@ N.B.
 | Week 6 | READING WEEK | READING WEEK | READING WEEK |
 | Week 7 |  21/2/19 COMPUTING 3 [Classification](Classification.ipynb)| 21/2/19 COMPUTING 3 [Classification](Classification.ipynb)| 22/2/19 LECTURE 6 [Environmental Modelling: I](coursenotes/modelling1.pdf) |
 | Week 8 |  28/2/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 28/2/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 1/3/19 LECTURE 6 [Environmental Modelling: II](coursenotes/modelling2.pdf)|
-| Week 9 |  07/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 07/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 08/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)|
-| Week 10 |  14/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 14/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 15/3/16 Project Discussion|
-| Week 11 |  21/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 21/3/16 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)|  No lecture |
+| Week 9 |  07/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 07/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 08/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)|
+| Week 10 |  14/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 14/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 15/3/19 Project Discussion|
+| Week 11 |  21/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 21/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)|  No lecture |
 
 
 Lectures in [Pearson G07](https://www.ucl.ac.uk/maps/pearson)
