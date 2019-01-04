@@ -2,9 +2,10 @@
 
 # GEOG0027 Environmental Remote Sensing
 
-##Course Tutors
+## Course Tutors
 
 [Prof. P. Lewis](http://www2.geog.ucl.ac.uk/~plewis)
+[Dr Qingling Wu](https://www.geog.ucl.ac.uk/people/research-staff/qingling-wu)
 
 Department of Geography
     
@@ -18,7 +19,7 @@ University College London
 -----------------------------------
 
 
-####<a name="Education">Educational Aims and Objectives of the Course</a>
+#### <a name="Education">Educational Aims and Objectives of the Course</a>
 
  To enable the students to: 
  
@@ -34,9 +35,9 @@ University College London
 -----------------------------------
 
 
-####<a name="workload">Course workload and assessment</a>
+#### <a name="workload">Course workload and assessment</a>
 
-#####Expected Course Load
+##### Expected Course Load
 |Component 	|Hours|
 |-------  | :--------:|
 | Lectures | 	8|
@@ -52,7 +53,7 @@ Usual range 100-150 for 1/2 course unit
 -----------------------------------
 
 
-#####Assessment
+##### Assessment
 
 + 100% Assessed Practical (3500 words) - submission date standard 2nd year submission date i.e. Weds 23th March 2016 (12 noon).
 
@@ -64,7 +65,7 @@ N.B.
 -----------------------------------
 
 
-####<a name="Timetable">Timetable 2014-15</a>
+#### <a name="Timetable">Timetable 2014-15</a>
 
 
 |  | Thursday 09:00-10:00 | Thursday 11:00-12:00 | Friday 16:00-17:00 |
@@ -91,7 +92,7 @@ Computing in Pearson Building, UNIX Computer lab, [Pearson 110a](https://www.ucl
 -----------------------------------
 
 
-####<a name="Reading List">Reading List</a>
+#### <a name="Reading List">Reading List</a>
 
 - Jensen, John R. (2006) Remote Sensing of the Environment: an Earth Resources Perspective, Hall and Prentice, New Jersey, 2nd ed.
 - Jensen, John R. (1995, 2004) Introductory Digital Image Processing: A Remote Sensing Perspective (Prentice Hall Series in Geographic Information Science)
@@ -104,7 +105,7 @@ Computing in Pearson Building, UNIX Computer lab, [Pearson 110a](https://www.ucl
 
 
 
-####<a name="elsewhere">How to run the practicals elsewhere</a>
+#### <a name="elsewhere">How to run the practicals elsewhere</a>
 
 You can download all of the notes and practicals from this site.
 
