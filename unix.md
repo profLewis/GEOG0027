@@ -4,7 +4,7 @@ Since you will be working on UNIX (Linux) computers, it is useful to know a few 
 
 ## Change directory `cd`
 
-Your course notes (these notes) should be available to you in the location `/home/zcfa***/DATA/geog2021` and `/home/zcfa***/DATA/Geog2021_Coursework`, where `zcfa***` is your username.
+Your course notes (these notes) should be available to you in the location `/home/zcfa***/DATA/geog0027` and `/home/zcfa***/DATA/Geog0027_Coursework`, where `zcfa***` is your username.
 
 The location `/home/zcfa***` on the file system is called your **home directory**. When you open a shell tool (terminal) this will usually be the directory you are in to start with.
 
