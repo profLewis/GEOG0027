@@ -40,7 +40,7 @@ This will give e.g. `/home/zcfa***/DATA` (depending on who, and where you are of
 
 We use the command `ls` to get a listing of the files in a particular directory. For example:
 
-    machine% cd ~/DATA/geog2021
+    machine% cd ~/DATA/GEOG0027
     machine% pwd
     machine% ls -lh
     
