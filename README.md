@@ -1,6 +1,6 @@
 ![UCL](https://github.com/profLewis/Geog2021_Coursework/blob/master/images/ucl_logo.png?raw=true)
 
-# GEOG2021 Environmental Remote Sensing
+# GEOG0027 Environmental Remote Sensing
 
 ##Course Tutors
 
@@ -10,6 +10,8 @@ Department of Geography
     
 University College London
     
+    
+![](images/europe.jpg)
 
 [[Educational Aims and Objectives of the Course](#Education)]  [[Course workload and assessment](#workload)] [[Timetable 2015-16](#Timetable)] [[Reading List](#Reading List)] [[How to run the practicals elsewhere](#elsewhere)]
 
@@ -65,7 +67,7 @@ N.B.
 ####<a name="Timetable">Timetable 2014-15</a>
 
 
-|  | Monday 09:00-10:00 | Thursday 11:00-12:00 | Thursday 12:00-13:00 |
+|  | Thursday 09:00-10:00 | Thursday 11:00-12:00 | Friday 16:00-17:00 |
 | -------------------|  -------------------| :-----------------: | :------------------: |
 | Week 1 | 09/1/17 LECTURE 1 [Introduction to course; Environmental Remote Sensing](coursenotes/lecture1.pdf) | 14/1/16 COMPUTING 1 [Introductory Computing](unix.md)|14/1/16 COMPUTING 2 [Image Display](ImageDisplay.ipynb)|
 | Week 2 | 18/1/16 LECTURE 2 [Image Display and Enhancement](coursenotes/lecture2.pdf) | 21/1/16 COMPUTING 2 [Data download](Download.ipynb)| 21/1/16 COMPUTING 2 [Image Display](ImageDisplay.ipynb)|
@@ -75,15 +77,15 @@ N.B.
 | Week 6 | READING WEEK | READING WEEK | READING WEEK |
 | Week 7 | 22/2/16 LECTURE 6 [Environmental Modelling: I](coursenotes/modelling1.pdf) | 25/2/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)| 25/2/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)|
 | Week 8 | 29/2/16 LECTURE 6 [Environmental Modelling: II](coursenotes/modelling2.pdf)| 03/3/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)|
-| Week 9 | 07/3/16  COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)| | 10/3/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)| 10/3/16 COMPUTING 4 [Project](project)|
+| Week 9 | 07/3/16  COMPUTING 4 [Project](http://proflewis.github.io/Geog0027_Coursework/)| | 10/3/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)| 10/3/16 COMPUTING 4 [Project](project)|
 | Week 10 | 14/3/15 PROJECT DISCUSSIONS (Physics A1/3)| 17/3/16 COMPUTING 4 [Project](http://proflewis.github.io/Geog2021_Coursework/)| 17/3/16 COMPUTING 4 [Project](project)|
-| Week 11 | 21/3/16 [Project](http://proflewis.github.io/Geog2021_Coursework/)| | |
+| Week 11 | 21/3/16 [Project](http://proflewis.github.io/Geog0027_Coursework/)| | |
 ||[Topic Revision Notes](coursenotes/lecture8_2011.pdf)||
 
 
-Lectures in (Physics A1/3 (4th floor))
+Lectures in [Pearson G07](https://www.ucl.ac.uk/maps/pearson)
 
-Computing in Pearson Building, UNIX Computer lab, PB 110a 
+Computing in Pearson Building, UNIX Computer lab, [Pearson 110a](https://www.ucl.ac.uk/maps/pearson)
 
 
 -----------------------------------
@@ -106,12 +108,15 @@ Computing in Pearson Building, UNIX Computer lab, PB 110a
 
 You can download all of the notes and practicals from this site.
 
-To run the practicals, you will need access to [ENVI](http://swdb.ucl.ac.uk/package/view/id/142?filter=envi) and the datasets associated with each practical.
+To run the practic
+als, you will need access to [ENVI](http://swdb.ucl.ac.uk/package/view/id/142?filter=envi) and the datasets associated with each practical.
 
 Note that installing IDL/Envi is likely to take around 2.5 GB of space.
 
-If you download ENVI, make sure you also download the [license file](http://swdb.ucl.ac.uk/package/download/id/142/fileId/1539). If you install ENVI on your own computer, make sure you follow the instructions [on setting up the license server](http://www.exelisvis.com/Support/HelpArticlesDetail/TabId/219/ArtMID/900/ArticleID/4660/4660.aspx) after downloading the software and license file from the [UCL software database](http://swdb.ucl.ac.uk).
+If you download ENVI for offsite use, make sure you also sort the license file: follow the [installation instructions](http://swdb.ucl.ac.uk/package/view/id/142). 
 
 You can also run the practicals using [desktop@UCL Anywhere](http://www.ucl.ac.uk/isd/services/desktops/students/desktop-anywhere)
 
 ![desktop@UCL Anywhere](https://github.com/profLewis/geog2021/blob/master/images/desktop-ucl-anywhere-logo-globe.jpg?raw=true)
+
+To get the course notes and datasets onto your computer, go to the [course github page](https://github.com/profLewis/GEOG0027.git) and clone or download the git.
