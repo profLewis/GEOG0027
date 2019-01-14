@@ -1,4 +1,4 @@
-![UCL](https://github.com/profLewis/Geog2021_Coursework/blob/master/images/ucl_logo.png?raw=true)
+![UCL](docs/images//ucl_logo.png)
 
 # GEOG0027 Environmental Remote Sensing
 
@@ -15,9 +15,9 @@ Department of Geography
 University College London
     
     
-![](images/europe.jpg)
+![](docs/images/europe.jpg)
 
-[[Educational Aims and Objectives of the Course](#Education)]  [[Course workload and assessment](#workload)] [[Timetable 2015-16](#Timetable)] [[Reading List](#Reading List)] [[How to run the practicals elsewhere](#elsewhere)]
+[[Educational Aims and Objectives of the Course](#Education)]  [[Course workload and assessment](#workload)] [[Timetable 2018-19](#Timetable)] [[Reading List](#Reading List)] [[How to run the practicals elsewhere](#elsewhere)]
 
 -----------------------------------
 
@@ -68,19 +68,19 @@ N.B.
 -----------------------------------
 
 
-#### <a name="Timetable">Timetable 2014-15</a>
+#### <a name="Timetable">Timetable 2018-19</a>
 
 
 |  | Thursday 09:00-10:00 | Thursday 11:00-12:00 | Friday 16:00-17:00 |
 | -------------------|  -------------------| :-----------------: | :------------------: |
-| Week 1 |  | | 11/1/19 LECTURE 1 [Introduction to course; Environmental Remote Sensing](coursenotes/lecture1.pdf) |
-| Week 2 | 17/1/19 COMPUTING 1 [Introductory Computing](unix.md)|17/1/19 COMPUTING 2 [Image Display](ImageDisplay.ipynb)| 18/1/19 LECTURE 2 [Image Display and Enhancement](coursenotes/lecture2.pdf) |
-| Week 3 | 24/1/19 COMPUTING 2 [Data download](Download.ipynb)| 24/1/19 COMPUTING 2 [Image Display](ImageDisplay.ipynb)| 25/1/19 LECTURE 3 [Spatial Information](coursenotes/lecture3.pdf) |
-| Week 4  | 31/1/19 COMPUTING 2 [Spatial Filtering](SpatialFiltering.ipynb)| 31/1/19 COMPUTING 2 [Spatial Filtering](SpatialFiltering.ipynb)| 01/2/19 LECTURE 4 [Image Classification](coursenotes/lecture4.pdf) | 
-| Week 5 | 04/2/16 COMPUTING 3 [Classification](Classification.ipynb)| 04/2/16 COMPUTING 3 [Classification](Classification.ipynb)| 05/2/19 LECTURE 5 [Spectral Information](coursenotes/lecture5.pdf) |
+| Week 1 |  | | 11/1/19 LECTURE 1 [Introduction to course; Environmental Remote Sensing](docs/coursenotes/lecture1.pdf) |
+| Week 2 | 17/1/19 COMPUTING 1 [Introductory Computing](docs/unix.md)|17/1/19 COMPUTING 2 [Image Display](docs/ImageDisplay.ipynb)| 18/1/19 LECTURE 2 [Image Display and Enhancement](docs/coursenotes/lecture2.pdf) |
+| Week 3 | 24/1/19 COMPUTING 2 [Data download](docs/Download.ipynb)| 24/1/19 COMPUTING 2 [Image Display](docs/ImageDisplay.ipynb)| 25/1/19 LECTURE 3 [Spatial Information](docs/coursenotes/lecture3.pdf) |
+| Week 4  | 31/1/19 COMPUTING 2 [Spatial Filtering](docs/SpatialFiltering.ipynb)| 31/1/19 COMPUTING 2 [Spatial Filtering](docs/SpatialFiltering.ipynb)| 01/2/19 LECTURE 4 [Image Classification](docs/coursenotes/lecture4.pdf) | 
+| Week 5 | 04/2/16 COMPUTING 3 [Classification](docs/Classification.ipynb)| 04/2/16 COMPUTING 3 [Classification](docs/Classification.ipynb)| 05/2/19 LECTURE 5 [Spectral Information](docs/coursenotes/lecture5.pdf) |
 | Week 6 | READING WEEK | READING WEEK | READING WEEK |
-| Week 7 |  21/2/19 COMPUTING 3 [Classification](Classification.ipynb)| 21/2/19 COMPUTING 3 [Classification](Classification.ipynb)| 22/2/19 LECTURE 6 [Environmental Modelling: I](coursenotes/modelling1.pdf) |
-| Week 8 |  28/2/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 28/2/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 1/3/19 LECTURE 6 [Environmental Modelling: II](coursenotes/modelling2.pdf)|
+| Week 7 |  21/2/19 COMPUTING 3 [Classification](docs/Classification.ipynb)| 21/2/19 COMPUTING 3 [Classification](docs/Classification.ipynb)| 22/2/19 LECTURE 6 [Environmental Modelling: I](docs/coursenotes/modelling1.pdf) |
+| Week 8 |  28/2/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 28/2/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 1/3/19 LECTURE 6 [Environmental Modelling: II](docs/coursenotes/modelling2.pdf)|
 | Week 9 |  07/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 07/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 08/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)|
 | Week 10 |  14/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 14/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 15/3/19 Project Discussion|
 | Week 11 |  21/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)| 21/3/19 COMPUTING 4 [Project](http://proflewis.github.io/GEOG0027_Coursework/)|  No lecture |
@@ -116,10 +116,10 @@ als, you will need access to [ENVI](http://swdb.ucl.ac.uk/package/view/id/142?fi
 
 Note that installing IDL/Envi is likely to take around 2.5 GB of space.
 
-If you download ENVI for offsite use, make sure you also sort the license file: follow the [installation instructions](http://swdb.ucl.ac.uk/package/view/id/142). 
+If you download ENVI for offsite use, make sure you also sort the license: follow the [installation instructions](http://swdb.ucl.ac.uk/package/view/id/142). 
 
 You can also run the practicals using [desktop@UCL Anywhere](http://www.ucl.ac.uk/isd/services/desktops/students/desktop-anywhere)
 
-![desktop@UCL Anywhere](https://github.com/profLewis/geog2021/blob/master/images/desktop-ucl-anywhere-logo-globe.jpg?raw=true)
+![desktop@UCL Anywhere](docs/images/desktop-ucl-anywhere-logo-globe.jpg?raw=true)
 
 To get the course notes and datasets onto your computer, go to the [course github page](https://github.com/profLewis/GEOG0027.git) and clone or download the git.
