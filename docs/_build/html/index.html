@@ -17,7 +17,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Classification using ENVI 5.2" href="Classification.html" />
+    <link rel="next" title="1. Image Display and Enhancement using ENVI 5.5" href="ImageDisplay.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -164,8 +164,8 @@ COMPUTING 1
 Computing</a></td>
 <td>17/1/19
 COMPUTING 2
-<a class="reference external" href="ImageDisplay.ipynb">Image
-Display</a></td>
+<a class="reference internal" href="ImageDisplay.html"><span class="doc">Image
+Display</span></a></td>
 <td>18/1/19 LECTURE
 2 <a class="reference external" href="coursenotes/lecture2.pdf">Image
 Display and
@@ -174,12 +174,12 @@ Enhancement</a></td>
 <tr class="row-even"><td>Week 3</td>
 <td>24/1/19
 COMPUTING 2
-<a class="reference external" href="Download.ipynb">Data
-download</a></td>
+<a class="reference internal" href="Download.html"><span class="doc">Data
+download</span></a></td>
 <td>24/1/19
 COMPUTING 2
-<a class="reference external" href="ImageDisplay.ipynb">Image
-Display</a></td>
+<a class="reference internal" href="ImageDisplay.html"><span class="doc">Image
+Display</span></a></td>
 <td>25/1/19 LECTURE
 3 <a class="reference external" href="coursenotes/lecture3.pdf">Spatial
 Information</a></td>
@@ -187,12 +187,12 @@ Information</a></td>
 <tr class="row-odd"><td>Week 4</td>
 <td>31/1/19
 COMPUTING 2
-<a class="reference external" href="SpatialFiltering.ipynb">Spatial
-Filtering</a></td>
+<a class="reference internal" href="SpatialFiltering.html"><span class="doc">Spatial
+Filtering</span></a></td>
 <td>31/1/19
 COMPUTING 2
-<a class="reference external" href="SpatialFiltering.ipynb">Spatial
-Filtering</a></td>
+<a class="reference internal" href="SpatialFiltering.html"><span class="doc">Spatial
+Filtering</span></a></td>
 <td>01/2/19 LECTURE
 4 <a class="reference external" href="coursenotes/lecture4.pdf">Image
 Class</a></td>
@@ -293,17 +293,69 @@ Image Interpretation. John</li>
 <h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Classification.html">1. Classification</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Classification.html#Aims">1.1. Aims</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Classification.html#Advanced-use-of-these-notes">1.2. Advanced use of these notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Classification.html#Contents">1.3. Contents</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Classification.html#1.-Introduction">1.4. 1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Classification.html#2.-Examination-of-the-data">1.5. 2. Examination of the data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Classification.html#3.-Defining-spectral-classes">1.6. 3. Defining spectral classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Classification.html#4.-Image-Classification">1.7. 4. Image Classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Classification.html#5.-Accuracy-Assessment">1.8. 5. Accuracy Assessment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Classification.html#6.-Further-Work">1.9. 6. Further Work</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Classification.html#7.-Summary">1.10. 7. Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImageDisplay.html">1. Image Display</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#Aims">1.1. Aims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#Contents">1.2. Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#Data">1.3. Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#1.-Introduction">1.4. 1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#2.-Exploration">1.5. 2. Exploration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#3.-Spectral-Features">1.6. 3. Spectral Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#4.-Spectral-Profiles">1.7. 4. Spectral Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#5.-Enhancement">1.8. 5. Enhancement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#6.-Comparing-Images">1.9. 6. Comparing Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ImageDisplay.html#Transparency">1.9.1. Transparency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageDisplay.html#Swipe-and-Flicker">1.9.2. Swipe and Flicker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageDisplay.html#Views">1.9.3. Views</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#7.-More-Exploring">1.10. 7. More Exploring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ImageDisplay.html#Annotation">1.10.1. Annotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageDisplay.html#Google-Earth">1.10.2. Google Earth</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ImageDisplay.html#8.-Summary">1.11. 8. Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Download.html">2. Data Download</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Download.html#Downloading-and-visualisation-tools">2.1. Downloading and visualisation tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Download.html#Select-Landsat-Scenes">2.2. Select Landsat Scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Download.html#Download-ordered-data">2.3. Download ordered data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Download.html#Fixing-Landsat-7-SLC-issues">2.4. Fixing Landsat 7 SLC issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Download.html#Easier-ordering">2.5. Easier ordering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Download.html#3.5-Download-Scenes">2.6. 3.5 Download Scenes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SpatialFiltering.html">3. Spatial Filtering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SpatialFiltering.html#Aims">3.1. Aims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialFiltering.html#Advanced-use-of-these-notes">3.2. Advanced use of these notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialFiltering.html#Contents">3.3. Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialFiltering.html#Data">3.4. Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialFiltering.html#1.-Introduction">3.5. 1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialFiltering.html#2.-Convolution-filtering">3.6. 2. Convolution filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialFiltering.html#3.-Convolution">3.7. 3. Convolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialFiltering.html#4.-Extras">3.8. 4. Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialFiltering.html#5.-Summary">3.9. 5. Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ClassificationIntro.html">4. Classification Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ClassificationIntro.html#Aims">4.1. Aims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassificationIntro.html#Advanced-use-of-these-notes">4.2. Advanced use of these notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassificationIntro.html#Contents">4.3. Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassificationIntro.html#Data">4.4. Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassificationIntro.html#1.-Introduction">4.5. 1. Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Classification.html">5. Classification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Classification.html#Aims">5.1. Aims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classification.html#Advanced-use-of-these-notes">5.2. Advanced use of these notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classification.html#Contents">5.3. Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classification.html#1.-Introduction">5.4. 1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classification.html#2.-Examination-of-the-data">5.5. 2. Examination of the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classification.html#3.-Defining-spectral-classes">5.6. 3. Defining spectral classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classification.html#4.-Image-Classification">5.7. 4. Image Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classification.html#5.-Accuracy-Assessment">5.8. 5. Accuracy Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classification.html#6.-Further-Work">5.9. 6. Further Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classification.html#7.-Summary">5.10. 7. Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -334,14 +386,18 @@ Image Interpretation. John</li>
 
 <h3>Navigation</h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Classification.html">1. Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImageDisplay.html">1. Image Display</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Download.html">2. Data Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpatialFiltering.html">3. Spatial Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassificationIntro.html">4. Classification Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Classification.html">5. Classification</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="Classification.html" title="next chapter">1. Classification using ENVI 5.2</a></li>
+      <li>Next: <a href="ImageDisplay.html" title="next chapter">1. Image Display and Enhancement using ENVI 5.5</a></li>
   </ul></li>
 </ul>
 </div>

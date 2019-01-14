@@ -1,0 +1,420 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>1. Image Display and Enhancement using ENVI 5.5 &#8212; GEOG0027 Environmental Remote Sensing 1.0.2019 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Download data" href="Download.html" />
+    <link rel="prev" title="GEOG0027 Environmental Remote Sensing" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1><p>Table of Contents</p>
+</h1><div class="toc"><ul class="toc-item"><li><p>Image Display and Enhancement using ENVI 5.5</p>
+<ul class="toc-item"><li><p>Aims</p>
+</li><li><p>Contents</p>
+</li><li><p>Data</p>
+</li><li><ol class="arabic simple">
+<li>Introduction</li>
+</ol>
+</li><li><ol class="arabic simple" start="2">
+<li>Exploration</li>
+</ol>
+</li><li><ol class="arabic simple" start="3">
+<li>Spectral Features</li>
+</ol>
+</li><li><ol class="arabic simple" start="4">
+<li>Spectral Profiles</li>
+</ol>
+</li><li><ol class="arabic simple" start="5">
+<li>Enhancement</li>
+</ol>
+</li><li><ol class="arabic simple" start="6">
+<li>Comparing Images</li>
+</ol>
+<ul class="toc-item"><li><p>Transparency</p>
+</li><li><p>Swipe and Flicker</p>
+</li><li><p>Views</p>
+</li></ul></li><li><ol class="arabic simple" start="7">
+<li>More Exploring</li>
+</ol>
+<ul class="toc-item"><li><p>Annotation</p>
+</li><li><p>Google Earth</p>
+</li></ul></li><li><ol class="arabic simple" start="8">
+<li>Summary</li>
+</ol>
+</li></ul></li></ul></div><div class="section" id="Image-Display-and-Enhancement-using-ENVI-5.5">
+<h1>1. Image Display and Enhancement using ENVI 5.5<a class="headerlink" href="#Image-Display-and-Enhancement-using-ENVI-5.5" title="Permalink to this headline">¶</a></h1>
+<p>Prof. P. Lewis &amp; Dr. M. Disney</p>
+<p>Remote Sensing Unit</p>
+<p>Dept. Geography</p>
+<p>UCL</p>
+<div class="section" id="Aims">
+<h2>1.1. Aims<a class="headerlink" href="#Aims" title="Permalink to this headline">¶</a></h2>
+<p>After completing this practical, you should have a reasonable idea of a range of basic functions within an image processing software, envi. You should also have started to make some sense of how the theory you are learning in the lectures can be used to manipulate image data.</p>
+</div>
+<div class="section" id="Contents">
+<h2>1.2. Contents<a class="headerlink" href="#Contents" title="Permalink to this headline">¶</a></h2>
+<p>[<a class="reference external" href="#Image-Display-and-Enhancement-using-ENVI-5.2">top</a>][<a class="reference external" href="#1.-Introduction">Introduction</a>] [<a class="reference external" href="#2.-Exploration">Exploration</a>][<a class="reference external" href="#3.-Spectral-Features">Spectral Features</a>] [<a class="reference external" href="#4.-Spectral-Profiles">Spectral Profiles</a>][<a class="reference external" href="#5.-Enhancement">Enhancement</a>] [<a class="reference external" href="#6.-Comparing-Images">Comparing Images</a>][<a class="reference external" href="#7.-More-Exploring">More Exploring</a>] [<a class="reference external" href="#8.-Summary">Summary</a>]</p>
+</div>
+<div class="section" id="Data">
+<h2>1.3. Data<a class="headerlink" href="#Data" title="Permalink to this headline">¶</a></h2>
+<p>The datasets you need for this practical should be available to you on the local file system (<code class="docutils literal notranslate"><span class="pre">~/DATA/GEOG0027</span></code>):</p>
+<ul class="simple">
+<li><a class="reference external" href="practical1/ETM-190600">ETM-190600</a></li>
+<li><a class="reference external" href="practical1/ETM-190600.HDR">ETM-190600.HDR</a></li>
+<li><a class="reference external" href="practical1/TM-280589">TM-280589</a></li>
+<li><a class="reference external" href="practical1/TM-280589.HDR">TM-280589.HDR</a></li>
+</ul>
+<p>or from <a class="reference external" href="https://github.com/profLewis/GEOG0027/blob/master/practical1">https://github.com/profLewis/GEOG0027/blob/master/practical1</a> if you need to download them for any reason.</p>
+<p>The data you will be using are:</p>
+<ul class="simple">
+<li>six wavebands of a Landsat TM image over Greater London, imaged on May 28th 1989. The data were obtained from the GLCF which maintains a large database of (freely available) Landsat and other imagery. The data are at an original pixel spacing of 28.5 m, but have been resampled to a 25 m grid here. The data are in a Transverse Mercator projection with OSGB 1936 datum.</li>
+<li>six wavebands (nominally the same wavelengths) of a Landsat ETM image with 25 m spatial resolution, covering the same spatial extent. These data were obtained on June 19th 2000. The data were obtained from Landmap which contains a database available to Universities and other users through an Athens login (done via the institution you are at).</li>
+</ul>
+<p>The wavebands are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">1</th>
+<th class="head">2</th>
+<th class="head">3</th>
+<th class="head">4</th>
+<th class="head">5</th>
+<th class="head">6</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>450-520 nm</td>
+<td>520-600 nm</td>
+<td>630-690 nm</td>
+<td>760-900 nm</td>
+<td>1550-1750 nm</td>
+<td>2080-2350 nm</td>
+</tr>
+</tbody>
+</table>
+<p>The extent of the imagery is (Lat/Lon):</p>
+<div class="math notranslate nohighlight">
+\[51^o 43'   9.23'' North, 0^o 36' 18.37'' West\]</div>
+<p>to</p>
+<div class="math notranslate nohighlight">
+\[51^o 16' 29.32'' North,  0^o 27' 24.60'' East\]</div>
+</div>
+<div class="section" id="1.-Introduction">
+<h2>1.4. 1. Introduction<a class="headerlink" href="#1.-Introduction" title="Permalink to this headline">¶</a></h2>
+<p><strong>*In this section, we will learn how to do a one time setup of the ENVI preferences and to load a false colour composite image*</strong>.</p>
+<p>The purpose of this practical is for you to gain experience in image display and enhancement of EO data. The session will be normally run as two two hour supervised practical. You may not complete all tasks in detail in that time, so once you get the hang of how to use the tool, move on to the next section and return later to think more about the remote sensing.</p>
+<p>If you are doing this exercise in the departmental UNIX lab, you will be using a UNIX workstation, and <a class="reference external" href="https://nbviewer.jupyter.org/github/profLewis/geog2021/blob/master/basicUnixFileMgr.html">may find knowledge of some basic Unix useful</a>. These notes are not intended to be a comprehensive introduction to ENVI functionality. They serve as an introduction to remote sensing and image processing, presuming no prior knowedge. Further information on envi tools and fuctions can be found in the
+on-line help pages.</p>
+<p>If you have started up <code class="docutils literal notranslate"><span class="pre">ENVI</span></code> and the license server is functioning correctly, you should initially see the following (large) window (<code class="docutils literal notranslate"><span class="pre">ENVI</span> <span class="pre">5.5</span></code>).</p>
+<p><img alt="text" src="_images/datargb.png" /></p>
+<p>The top bar has various menu items:</p>
+<p><img alt="text" src="_images/datargb.png" /></p>
+<p>The first time you use the tool, you may find it convenient to update the default data location.</p>
+<p>You can access this via the <code class="docutils literal notranslate"><span class="pre">File-&gt;Preferences</span></code> menu.</p>
+<p><img alt="text" src="_images/datargb.png" /></p>
+<p>Typically, we will want to change the <code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">Directory</span></code> and <code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">Directory</span></code> to where you are currently working,</p>
+<p>e.g. <code class="docutils literal notranslate"><span class="pre">/Users/plewis/GEOG0027/data</span></code> on a Mac, or <code class="docutils literal notranslate"><span class="pre">/home/ucfalew/DATA/GEOG0027/data</span></code> or similar on the UCL system.</p>
+<p><em>Make a note of where your image data are</em>, so that you can find them the next time!</p>
+<p><strong>You have to quit and restart ENVI for these changes to take effect.</strong></p>
+<p>Once you re-start ENVI, you should now be able to open an image dataset: select <code class="docutils literal notranslate"><span class="pre">File-&gt;Data</span> <span class="pre">Manager</span></code> from the menu.</p>
+<p><img alt="text" src="_images/datargb.png" /></p>
+<p>Click on the file tab, and choose an image file to open e.g. <code class="docutils literal notranslate"><span class="pre">ETM-190600</span></code>. Do not select the <code class="docutils literal notranslate"><span class="pre">HDR</span></code> files as these are header files.</p>
+<p><img alt="text" src="_images/datargb.png" /></p>
+<p>When the image file is openened, should result in the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Manager</span></code> being opened:</p>
+<p>From which you can select one or more ‘bands’ to open and assign to the red, green and blue colour guns.</p>
+<p><img alt="text" src="_images/datargb.png" /></p>
+<p>This example should load a <strong>False Colour Composite</strong> of the image dataset.</p>
+</div>
+<div class="section" id="2.-Exploration">
+<h2>1.5. 2. Exploration<a class="headerlink" href="#2.-Exploration" title="Permalink to this headline">¶</a></h2>
+<p><strong>*In this section, we use various tools for exploring the image*</strong>.</p>
+<ul class="simple">
+<li>Once you have loaded an image, explore how to pan and zoom around the image</li>
+<li>Whilst doing this, examine some of the features you see in the image:<ul>
+<li>Find the <code class="docutils literal notranslate"><span class="pre">crosshairs</span></code> (and/or <code class="docutils literal notranslate"><span class="pre">cursor</span> <span class="pre">value</span></code>) icon on the tool bar, and explore the geographical coordinates and the digital number (DN) in the three wavebands you are examining.<ul>
+<li>how could you check that the geographic coordinates seem sensible?</li>
+<li>try to relate the visual cues you see in the data to the DN values being shown</li>
+<li>use these ideas to interpret ‘colour’ as displayed in the image<ul>
+<li>e.g. what does the ‘red’ colour <em>mean</em> and why is it so?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Find out how to <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">RGB</span> <span class="pre">bands</span> <span class="pre">...</span></code> for the image you are viewing and use this to display e.g. a real colour composite.<ul>
+<li>Try some different band combinations and make sure you can interpret the colour you see</li>
+<li>What happens if you put the same band onto R G and B? why?</li>
+</ul>
+</li>
+<li>Explore using the brightness and contrast sliders<ul>
+<li>try to understand why the operation produces the results you get</li>
+</ul>
+</li>
+</ul>
+<p><strong>*Make sure you make notes of what you have done and how you have done it so you can recall this later.*</strong></p>
+</div>
+<div class="section" id="3.-Spectral-Features">
+<h2>1.6. 3. Spectral Features<a class="headerlink" href="#3.-Spectral-Features" title="Permalink to this headline">¶</a></h2>
+<p><strong>*In this section, we will learn how to consider spectral features and perform contrast enhancement*</strong>.</p>
+<p>Clearly, we can ‘recognise’ much information in the image from spatial context.</p>
+<p><img alt="image0" src="_images/views.png" /></p>
+<p>But there are other ways we can visualise the data to aid our interpretation.</p>
+<p>For example, if we select the <code class="docutils literal notranslate"><span class="pre">Custom</span> <span class="pre">stretch</span></code> button: <img alt="custom" src="_images/custom.png" /></p>
+<p>then we obtain a histogram view of the data, within which we can apply a contrast stretch by ‘moving’ the upper and lower thresholds.</p>
+<p>For greyscale:</p>
+<p><img alt="hist" src="_images/hist1.png" /></p>
+<p>or three band colour:</p>
+<p><img alt="hist" src="_images/hist1.png" /></p>
+<p>This can be useful both for performing a contrast stretch</p>
+<p><strong>*experiment with this so that you understand what the linear contrast enhancement is doing to the image DN*</strong> You may find it useful to save some historgrams and images and put these in your notes.</p>
+<p>It is also of value in visualising the features of the histogram. The histogram shows the frequency of occurrence of the different DNs in the image. For example in the image above, we can describe the blue waveband histogram (shown in blue) as having two clear peaks and a long positive tail. The two peaks are most likely indicative of different land cover classes. The fact that there is a long positive tail may show a third ‘bright’ class present.</p>
+<p><strong>*explore the histograms shown by some of the wavebands you have access to here*</strong></p>
+<p>As you do this, think about the relationship between the informations shown in the image and that in the histogram.</p>
+<ul class="simple">
+<li>How could you try to use the histogram to perform a classification on the image into different land cover classes?</li>
+<li>What issues might you come across?</li>
+<li>Do some bands show better separatbility than others? if so, which (and why?)</li>
+<li>A histogram is a useful way of summarising the information in an image. In fact, we will often use even simpler descriptors to decsribe a frequency distribution such as this, one example being the <em>mean</em> and <em>standard deviation</em>. Would it be a good idea to describe these histograms in this way? If not, why not?</li>
+</ul>
+<p>One way of extending our view of such summary data is to use a scatter plot (often called a ‘feature space’ plot).</p>
+<p><strong>*locate the scatter plot button, and display a scatter plot with the red waveband on the x axis and the NIR on the y axis*</strong></p>
+<p>Toggle the <code class="docutils literal notranslate"><span class="pre">density</span> <span class="pre">slice</span></code> button to show the scatter ploit in colour (density slice)</p>
+<p><img alt="image0" src="_images/views.png" /></p>
+<p><img alt="image1" src="_images/view2.png" /></p>
+<p>You should now be able to define (‘draw’) regions onto the scatter plot, and the pixels within this specified region are then displayed in the defined colour on the image:</p>
+<p><img alt="image0" src="_images/views.png" /></p>
+<p><img alt="image1" src="_images/view2.png" /></p>
+<p><strong>*You should spend some time exploring this for different wavebands, as this concept forms the basis of many remote sensing algorithms (particularly those for classification)*</strong></p>
+<p>As you do this, think about how the scatter plot and histogram information are related and also think about how you might get the computer to <em>describe</em> the regions you have drawn in the feature space plot.</p>
+<p>Think also about how using only one or two wavebands may be a limiting factor in classification (i.e. there is often information in other bands that may allow separability).</p>
+<p>Try using <code class="docutils literal notranslate"><span class="pre">Options</span> <span class="pre">-&gt;</span> <span class="pre">Mean</span> <span class="pre">All</span></code> on the scatter plot tool. This shows you the class means across all bands. This should allow you to better think about how the classes you have drawn might be separable in different wavebands.</p>
+</div>
+<div class="section" id="4.-Spectral-Profiles">
+<h2>1.7. 4. Spectral Profiles<a class="headerlink" href="#4.-Spectral-Profiles" title="Permalink to this headline">¶</a></h2>
+<p><strong>*In this section, we will learn how to do plot spectral profiles*</strong>.</p>
+<p>Note that you may need to close the scatterplot tool before doing this.</p>
+<p>Although we can display (up to) three bands of information in a colour composite, we often wish to know more information.</p>
+<p>The various <code class="docutils literal notranslate"><span class="pre">Display-&gt;Profiles</span></code> tools can help in this regard as we can look at the DN in all wavebands (for a particular pixel).</p>
+<p>The following show some example spectral profiles:</p>
+<p><img alt="Profile 1" src="_images/spec1.png" /></p>
+<p><img alt="Profile 2" src="_images/spec2.png" /></p>
+<p><img alt="Profile 3" src="_images/spec3.png" /></p>
+<p><strong>See if you can navigate your way to these locations and/or work out what ‘material’ is shown by the spectral profile</strong>.</p>
+</div>
+<div class="section" id="5.-Enhancement">
+<h2>1.8. 5. Enhancement<a class="headerlink" href="#5.-Enhancement" title="Permalink to this headline">¶</a></h2>
+<p><strong>*In this section, we will learn how to perform a variety of enhancement tasks*</strong>.</p>
+<p>We have seen that ENVI has simple image display enhancement capabilities such as ‘brightness’ and ‘contrast’ variation via contrtol sliders. Open the <code class="docutils literal notranslate"><span class="pre">Histogram</span> <span class="pre">stretch</span></code> window to visualise the histograms again.</p>
+<p>These are often useful first pass enhancement tools to enable you to more readily visualise features in the image.</p>
+<p>Several ‘automated’ or semi-automated approaches also exist that may provide a useful enhancement under certain conditions.</p>
+<p>These are available via a menu (<code class="docutils literal notranslate"><span class="pre">Linear</span></code> being the default) as:</p>
+<p><img alt="image0" src="_images/views.png" /></p>
+<p>For example,histogram equalisation is generally a useful visual enhancement method:</p>
+<p><img alt="image1" src="_images/view2.png" /> <img alt="image2" src="_images/z2.png" /></p>
+<p><img alt="image3" src="_images/histapp.png" /></p>
+<p><strong>*Explore the impact of various enhancement operations*</strong></p>
+<p>You may find it easiest to do this using a ‘greyscale’ representation (so there is just a single waveband to think about).</p>
+<p>Think about how the different enhancements relate to the information in the histogram.</p>
+<p><strong>*In particular, explore how you can use image enhancement to more readily differentiate different DN levels in a particular area of the image (e.g. the river)*</strong></p>
+</div>
+<div class="section" id="6.-Comparing-Images">
+<h2>1.9. 6. Comparing Images<a class="headerlink" href="#6.-Comparing-Images" title="Permalink to this headline">¶</a></h2>
+<p><strong>*In this section, we will examine some tools to use when comparing images*</strong>.</p>
+<p>Often, we wish to compare features from more than one image (e.g. Landsat images taken over an interval of time).</p>
+<p>There are several tools for exploring this in ENVI.</p>
+<p>First, remove the current loaded images from ENVI (Note down how you do this!), then load two dataset <code class="docutils literal notranslate"><span class="pre">ETM-190600</span></code> and <code class="docutils literal notranslate"><span class="pre">TM-280589</span></code>.</p>
+<p>One immediately obvious thing you can do is simply toggle each dataset <code class="docutils literal notranslate"><span class="pre">'on</span></code> and ‘<code class="docutils literal notranslate"><span class="pre">off</span></code> once it is loaded (using the dataset check box).</p>
+<p>You can use tools we have seen above, such as the scatterplot to visualise the scatter between the two datasets (<code class="docutils literal notranslate"><span class="pre">File-&gt;Select</span> <span class="pre">New</span> <span class="pre">Band</span></code>):</p>
+<p><img alt="image0" src="_images/views.png" /></p>
+<p>You can also very usefully ‘draw’ on this scatterplot to identify interesting features:</p>
+<p><img alt="image1" src="_images/view2.png" /></p>
+<div class="section" id="Transparency">
+<h3>1.9.1. Transparency<a class="headerlink" href="#Transparency" title="Permalink to this headline">¶</a></h3>
+<p>Another option is to use the transparency slider <img alt="image0" src="_images/views.png" /> to give different ‘weights’ of the two datasets. This might be useful, for instance to spot features that have changed between the two image dates:</p>
+<p><img alt="image1" src="_images/view2.png" /></p>
+<p><img alt="image2" src="_images/z2.png" /></p>
+</div>
+<div class="section" id="Swipe-and-Flicker">
+<h3>1.9.2. Swipe and Flicker<a class="headerlink" href="#Swipe-and-Flicker" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes it is useful to ‘flicker’ between the various images or swipe one over the other to spot features of (change) interest.</p>
+<p>These can be done using the appropriate buttons on the command bar:</p>
+<p><img alt="image0" src="_images/views.png" /></p>
+<p><img alt="image1" src="_images/view2.png" /></p>
+</div>
+<div class="section" id="Views">
+<h3>1.9.3. Views<a class="headerlink" href="#Views" title="Permalink to this headline">¶</a></h3>
+<p>One other option is to change the number of ‘views’ on the screen display:</p>
+<p><img alt="image0" src="_images/views.png" /></p>
+<p>This will create new ‘views’:</p>
+<p><img alt="image1" src="_images/view2.png" /></p>
+<p>And you can drag and drop loaded datasets to the particular view you want.</p>
+<p><strong>*Use these various comparison tools to highlight areas of difference between the two images*</strong></p>
+</div>
+</div>
+<div class="section" id="7.-More-Exploring">
+<h2>1.10. 7. More Exploring<a class="headerlink" href="#7.-More-Exploring" title="Permalink to this headline">¶</a></h2>
+<p>Some other interesting options to explore:</p>
+<div class="section" id="Annotation">
+<h3>1.10.1. Annotation<a class="headerlink" href="#Annotation" title="Permalink to this headline">¶</a></h3>
+<p>On the control bar, you should see options for annotating the image. Experiment with annotating the image for a few features and work out how to save a ‘picture’ of what you have done (e.g. <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">Chip</span> <span class="pre">view</span> <span class="pre">to-&gt;</span> <span class="pre">File</span> <span class="pre">...</span></code>):</p>
+<p><img alt="chip" src="_images/chip.jpg" /></p>
+</div>
+<div class="section" id="Google-Earth">
+<h3>1.10.2. Google Earth<a class="headerlink" href="#Google-Earth" title="Permalink to this headline">¶</a></h3>
+<p>If you have tools such as <a class="reference external" href="http://www.google.co.uk/intl/en_uk/earth/">Google Earth</a> set up on the computer you are using, try <code class="docutils literal notranslate"><span class="pre">File-&gt;Chip</span> <span class="pre">view</span> <span class="pre">to-&gt;Google</span> <span class="pre">Earth</span></code></p>
+<p><img alt="googlr earth" src="_images/google.png" /></p>
+</div>
+</div>
+<div class="section" id="8.-Summary">
+<h2>1.11. 8. Summary<a class="headerlink" href="#8.-Summary" title="Permalink to this headline">¶</a></h2>
+<p>The main aim of this practical is to get you used to using the image processing software tool <code class="docutils literal notranslate"><span class="pre">envi</span></code>.</p>
+<p>In this practical, we have loaded two Landsat images of London and used various tools within <code class="docutils literal notranslate"><span class="pre">envi</span></code> to visualise the data and their information content.</p>
+<p>In particular, we have learned about:</p>
+<ul class="simple">
+<li>Image Display<ul>
+<li>False Colour Composites</li>
+<li>Real Colour Composites</li>
+<li>Greyscale display</li>
+<li>Spectral profiles</li>
+</ul>
+</li>
+<li>Feature Space<ul>
+<li>Histograms</li>
+<li>Scatterplots</li>
+</ul>
+</li>
+<li>Enhancement<ul>
+<li>Linear contrast enhancement</li>
+<li>Histogram equalisation</li>
+</ul>
+</li>
+</ul>
+<p>[<a class="reference external" href="#Image-Display-and-Enhancement-using-ENVI-5.2">top</a>][<a class="reference external" href="#1.-Introduction">Introduction</a>] [<a class="reference external" href="#2.-Exploration">Exploration</a>][<a class="reference external" href="#3.-Spectral-Features">Spectral Features</a>] [<a class="reference external" href="#4.-Spectral-Profiles">Spectral Profiles</a>][<a class="reference external" href="#5.-Enhancement">Enhancement</a>] [<a class="reference external" href="#6.-Comparing-Images">Comparing Images</a>][<a class="reference external" href="#7.-More-Exploring">More Exploring</a>] [<a class="reference external" href="#8.-Summary">Summary</a>]</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">GEOG0027 Environmental Remote Sensing</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Image Display</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Aims">1.1. Aims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Contents">1.2. Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Data">1.3. Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.-Introduction">1.4. 1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#2.-Exploration">1.5. 2. Exploration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#3.-Spectral-Features">1.6. 3. Spectral Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#4.-Spectral-Profiles">1.7. 4. Spectral Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#5.-Enhancement">1.8. 5. Enhancement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#6.-Comparing-Images">1.9. 6. Comparing Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Transparency">1.9.1. Transparency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Swipe-and-Flicker">1.9.2. Swipe and Flicker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Views">1.9.3. Views</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#7.-More-Exploring">1.10. 7. More Exploring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Annotation">1.10.1. Annotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Google-Earth">1.10.2. Google Earth</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#8.-Summary">1.11. 8. Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Download.html">2. Data Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpatialFiltering.html">3. Spatial Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClassificationIntro.html">4. Classification Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Classification.html">5. Classification</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">GEOG0027 Environmental Remote Sensing</a></li>
+      <li>Next: <a href="Download.html" title="next chapter">2. Download data</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, P Lewis.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/ImageDisplay.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

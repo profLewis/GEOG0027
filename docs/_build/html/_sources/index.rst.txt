@@ -200,7 +200,12 @@ Contents
    :numbered:
    :maxdepth: 3
 
-   Classification <../Classification.ipynb>
+
+   Image Display <ImageDisplay.ipynb>
+   Data Download <Download.ipynb>
+   Spatial Filtering <SpatialFiltering.ipynb>
+   Classification Introduction <ClassificationIntro.ipynb>
+   Classification <Classification.ipynb>
 
 Search
 ==================
