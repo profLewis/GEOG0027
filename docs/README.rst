@@ -122,20 +122,19 @@ Timetable 2014-15
 +----------------+----------------+----------------+-----------------+
 | Week 4         | 31/1/19        | 31/1/19        | 01/2/19 LECTURE |
 |                | COMPUTING 2    | COMPUTING 2    | 4 `Image        |
-|                | `Spatial       | `Spatial       | Classification` |
-|                | Filtering`_    | Filtering`_    | _               |
+|                | `Spatial       | `Spatial       | Class`_         |
+|                | Filtering`_    | Filtering`_    |                 |
 +----------------+----------------+----------------+-----------------+
 | Week 5         | 04/2/16        | 04/2/16        | 05/2/19 LECTURE |
 |                | COMPUTING 3    | COMPUTING 3    | 5 `Spectral     |
-|                | `Classificatio | `Classificatio | Information`_   |
-|                | n`_            | n`_            |                 |
+|                | `Class`_       | `Class`_       | Information`_   |
 +----------------+----------------+----------------+-----------------+
 | Week 6         | READING WEEK   | READING WEEK   | READING WEEK    |
 +----------------+----------------+----------------+-----------------+
 | Week 7         | 21/2/19        | 21/2/19        | 22/2/19 LECTURE |
 |                | COMPUTING 3    | COMPUTING 3    | 6               |
-|                | `Classificatio | `Classificatio | `Environmental  |
-|                | n`_            | n`_            | Modelling: I`_  |
+|                | `Class`_       | `Class`_       | `Environmental  |
+|                |                |                | Modelling: I`_  |
 +----------------+----------------+----------------+-----------------+
 | Week 8         | 28/2/19        | 28/2/19        | 1/3/19 LECTURE  |
 |                | COMPUTING 4    | COMPUTING 4    | 6               |
@@ -181,8 +180,8 @@ Reading List
 .. _Data download: Download.ipynb
 .. _Spatial Information: coursenotes/lecture3.pdf
 .. _Spatial Filtering: SpatialFiltering.ipynb
-.. _Image Classification: coursenotes/lecture4.pdf
-.. _Classification: Classification.ipynb
+.. _Image Class: coursenotes/lecture4.pdf
+.. _Class: Classification.ipynb
 .. _Spectral Information: coursenotes/lecture5.pdf
 .. _`Environmental Modelling: I`: coursenotes/modelling1.pdf
 .. _Project: http://proflewis.github.io/GEOG0027_Coursework/

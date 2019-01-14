@@ -1,0 +1,556 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>1. Classification using ENVI 5.2 &#8212; GEOG0027 Environmental Remote Sensing 1.0.2019 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="GEOG0027 Environmental Remote Sensing" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 5ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="Classification-using-ENVI-5.2">
+<h1>1. Classification using ENVI 5.2<a class="headerlink" href="#Classification-using-ENVI-5.2" title="Permalink to this headline">¶</a></h1>
+<p>Prof. P. Lewis &amp; Dr. M. Disney</p>
+<p>Remote Sensing Unit</p>
+<p>Dept. Geography</p>
+<p>UCL</p>
+<div class="section" id="Aims">
+<h2>1.1. Aims<a class="headerlink" href="#Aims" title="Permalink to this headline">¶</a></h2>
+<p>After completing this practical, you should be able to analyse one or more image datasets using classification methods. This includes learning to identify land cover classes in a dataset and consider class separability (using histograms, scatterplots and other tools), and applying and assessing a classification product using Envi.</p>
+</div>
+<div class="section" id="Advanced-use-of-these-notes">
+<h2>1.2. Advanced use of these notes<a class="headerlink" href="#Advanced-use-of-these-notes" title="Permalink to this headline">¶</a></h2>
+<p>Although it is perfectly adequate to simply view the html (webpage) of these notes, there are some additional features in these notes that you can use (in this case, a convolution tool with sliders) if you access them in a different way. The reason this is possible is that these notes are written in an <a class="reference external" href="http://ipython.org/notebook.html">ipython notebook</a>.</p>
+<p>To use the notes as a notebook (assuming you have <code class="docutils literal notranslate"><span class="pre">`git</span></code> &lt;<a class="reference external" href="http://git-scm.com">http://git-scm.com</a>&gt;`__ and <a class="reference external" href="http://continuum.io/downloads">python</a> on your computer):</p>
+<ol class="arabic">
+<li><p class="first">Copy all of the notes to your local computer (<strong>if for the first time</strong>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">DATA</span><span class="o">/</span><span class="n">working</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">DATA</span><span class="o">/</span><span class="n">working</span>
+
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">profLewis</span><span class="o">/</span><span class="n">geog2021</span><span class="o">.</span><span class="n">git</span>
+
+<span class="n">cd</span> <span class="n">geog2021</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Copy all of the notes to your local computer (<strong>if for an update</strong>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">DATA</span><span class="o">/</span><span class="n">working</span><span class="o">/</span><span class="n">geog2021</span>
+
+<span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span> <span class="n">HEAD</span>
+
+<span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run the notebook</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ipython</span> <span class="n">notebook</span> <span class="n">Classification</span><span class="o">.</span><span class="n">ipynb</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="Contents">
+<h2>1.3. Contents<a class="headerlink" href="#Contents" title="Permalink to this headline">¶</a></h2>
+<p>[<a class="reference external" href="#Classification-using-ENVI-5.2">top</a>][<a class="reference external" href="ClassificationIntro.html#1.-Introduction">Introduction</a>] [<a class="reference external" href="Classification.html#2.-Examination-of-the-data">Examination of the data</a>][<a class="reference external" href="Classification.html#3.-Defining-spectral-classes">Defining spectral classes</a>] [<a class="reference external" href="Classification.html#4.-Image-Classification">Image Classification</a>][<a class="reference external" href="Classification.html#5.-Accuracy-Assessment">Accuracy Assessment</a>] [<a class="reference external" href="Classification.html#5.-Further-Work">Further
+Work</a>][<a class="reference external" href="Classification.html#5.-Summary">Summary</a>]</p>
+</div>
+<div class="section" id="1.-Introduction">
+<h2>1.4. 1. Introduction<a class="headerlink" href="#1.-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>The datasets you need for this practical are available from:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.dropbox.com/s/z00xo5uxeeru70n/ETM-110801?dl=0">ETM-110801</a></li>
+<li><a class="reference external" href="https://github.com/profLewis/geog2021/blob/master/data/ETM-110801.HDR">ETM-110801.HDR</a></li>
+<li><a class="reference external" href="https://www.dropbox.com/s/6896izuizbnp6jp/TM-250792?dl=0">TM-250792</a></li>
+<li><a class="reference external" href="https://github.com/profLewis/geog2021/blob/master/data/TM-250792.HDR">TM-250792.HDR</a></li>
+<li><a class="reference external" href="https://www.dropbox.com/s/dt3zvnhrbga18nv/SRTM-2002?dl=0">SRTM-2002</a></li>
+<li><a class="reference external" href="https://github.com/profLewis/geog2021/blob/master/data/TM-250792.HDR">SRTM-2002.HDR</a></li>
+</ul>
+<p>You should download these data and put them in a directory (folder) that you will remember!</p>
+<p>See <a class="reference external" href="ClassificationIntro.html">Classification Introduction</a> for more details on the context and datasets.</p>
+</div>
+<div class="section" id="2.-Examination-of-the-data">
+<h2>1.5. 2. Examination of the data<a class="headerlink" href="#2.-Examination-of-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Load up the two images and examine the data. Try to identify the various classes you might like to obtain for this exercise decide how you can identify them. Examine feature space plots (scatter plots) to help you decide what may be feasible (and what may not). <strong>You may decide that transformations of the data (e.g. band ratios or Principal Components) might aid your ability (and the computer’s ability) to discriminate between classes</strong>, but you should simply explore the data to start with.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span># Don&#39;t worry about this -- its just to display the google maps
+from IPython.display import HTML
+HTML(&#39;&lt;iframe src=gmRondoniaZoom.html width=100% height=700&gt;&lt;/iframe&gt;&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe src=gmRondoniaZoom.html width=100% height=700></iframe></div>
+</div>
+<p>Some examples of the various classes you might consider (shown on a standard False Colour Composite (FCC) image):</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Class</th>
+<th class="head">Notes</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Urban</strong></td>
+<td>May also include other ‘built’
+structures such as roads. You
+should be able to recognise these
+from their spatial structure, even
+at this resolution</td>
+<td><img alt="image0" src="images/post.png" /></td>
+</tr>
+<tr class="row-odd"><td><strong>Forest</strong></td>
+<td>This should be easy to spot, but
+there are sometime clear ‘shading’
+effects (as in this example) that
+might complicate classification</td>
+<td><img alt="image1" src="images/load.png" /></td>
+</tr>
+<tr class="row-even"><td><strong>Rocks</strong></td>
+<td>Rocks are quite easily
+identifiable in the FCC images.
+You would generally expect them to
+be static between the two dates.</td>
+<td><img alt="image2" src="images/ml.png" /></td>
+</tr>
+<tr class="row-odd"><td><strong>Rivers</strong></td>
+<td>There are rivers and other water
+bodies in the scene, which you
+will be able to recognise by their
+shape. They will be difficult to
+use as training sites as they are
+quite narrow at this resolution.</td>
+<td><img alt="image3" src="images/pink.png" /></td>
+</tr>
+<tr class="row-even"><td><strong>Farmland</strong></td>
+<td>You will see a broad patchwork of
+areas that have been cleared of
+forest and used to graze cattle or
+raise crops. The areas a quite
+easy to spot in the FCC images,
+but might represent a broad
+spectral class because of the
+various physical cover types
+involved</td>
+<td><img alt="image4" src="images/classes.gif" /></td>
+</tr>
+<tr class="row-odd"><td><strong>Other</strong></td>
+<td>You may spot some areas that have
+rather different spectral
+properties to most of the other
+areas. One example is shown here
+of field-shaped areas (green and
+purple areas) that might be
+inferred to be farmland, but are
+clearly different spectrally to
+other areas of farmland. We cannot
+really determine what these areas
+are from the information
+available, so you might require an
+‘other’ class to cope with such
+eventualities.</td>
+<td><img alt="image5" src="images/sep.png" /></td>
+</tr>
+<tr class="row-even"><td><strong>Cloud</strong></td>
+<td>The images may contain a small
+amount of cloud or smoke/haze, an
+example of which is shown here.
+They are quite easy to recognise
+visually in the FCC, but may be
+difficult to classify unless they
+are quite thick. If there are any
+thick clouds, you may see cloud
+shadows on the ground as well.</td>
+<td><img alt="image6" src="images/sep2.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>You may make use of Google Maps to explore detail of the areas, e.g., if you zoom in to the ‘rock’ area, you will find it is is actually more complex than just ‘bare rock’:</p>
+<p><img alt="image7" src="images/myclasses.png" /></p>
+<p>When deciding which classes may be appropriate to use, you should make use of your understanding of histograms and scatterplots, and use these to help explore the image information content.</p>
+</div>
+<div class="section" id="3.-Defining-spectral-classes">
+<h2>1.6. 3. Defining spectral classes<a class="headerlink" href="#3.-Defining-spectral-classes" title="Permalink to this headline">¶</a></h2>
+<p>In order to classify the image data you are required to define a set of “signatures” which represent each class. These are then used to “train” the classification algorithm.</p>
+<p>In envi, you need to define these classes via ROIs (Regions of Interest). Select the ROI tool:</p>
+<p><img alt="image0" src="images/post.png" /></p>
+<p>and outline an ROI you want to define with the tool:</p>
+<p><img alt="image1" src="images/load.png" /></p>
+<p>You may find the <a class="reference external" href="http://www.exelisvis.com/docs/nDimensionalVisualizer.html">‘N-D visualiser’</a> useful when doing this:</p>
+<p><img alt="image2" src="images/ml.png" /></p>
+<p>If you select only 2 bands to view, you will see informatyion similar to the scatterplot (i.e. 2-dimensional).</p>
+<p><img alt="image3" src="images/pink.png" /></p>
+<p>In such a view, you can readily ‘see’ how separable the classes might be.</p>
+<p>In higher dimensions, the visualiser ‘rotates’ the view so you can get different perspectives on the classes</p>
+<p><img alt="image4" src="images/classes.gif" /></p>
+<p>Note that you will want to create an ROI for each class you are interested in, but that yoy can ‘merge’ (or delete) classes once you have created them.</p>
+<p>When you think you have a suitable set of ROIs, check the class separability:</p>
+<p><img alt="image5" src="images/sep.png" /></p>
+<p>This outputs Divergence metrics between the classes you have defined. These values range between 0 and 2.0. As a guide to interpretation, values greater than 1.9 indicate good separability of classes. If class separability is less than this, you might consider splitting the classes for the classification and recombining them post-classification (e.g. have two classes: forest1 and forest2).</p>
+<p><img alt="image6" src="images/sep2.png" /></p>
+<p>Then, make sure you save them (to xml format):</p>
+<p><img alt="image7" src="images/myclasses.png" /></p>
+</div>
+<div class="section" id="4.-Image-Classification">
+<h2>1.7. 4. Image Classification<a class="headerlink" href="#4.-Image-Classification" title="Permalink to this headline">¶</a></h2>
+<p>To perform a classification, first look at the options in the Toolbox:</p>
+<p><img alt="image0" src="images/post.png" /></p>
+<p>As a first attempt, try the <a class="reference external" href="http://www.exelisvis.com/docs/MaximumLikelihood.html">Maximum Likelihood</a> classifier.</p>
+<p>A <a class="reference external" href="http://www.exelisvis.com/portals/0/pdfs/envi/Classification_Methods.pdf">Tutorial</a> is available that will take you through some of the other options.</p>
+<p>For the <a class="reference external" href="http://www.exelisvis.com/docs/MaximumLikelihood.html">Maximum Likelihood</a> classifier, slect this itme from the Toolbox:</p>
+<p><img alt="image1" src="images/load.png" /></p>
+<p>and perform any subsetting or masking that you might require.</p>
+<p>Then, select the Classes you want from the ROIs you have defined, along with making decisions about whether you want to save the result or not (if not, then just send it to ‘memory’, but it will not then be saved at the end of the session). If you do save the result, make sure you note down (in your notebook) what the file name was and what settings you used (e.g. which classes).</p>
+<p><img alt="image2" src="images/ml.png" /></p>
+<p>You should now have a classification result:</p>
+<p><img alt="image3" src="images/pink.png" /></p>
+<p>It is generally very instructive to visualise the ‘rule’ image associated with a result. This provides you with the reasoning the computer used to obtain the result it did.</p>
+<p>For a method such as that used above, the training data are used to generate multivariate statistical distributions that we suppose to describe the full class. Each pixel then can be assigned a probability of class membership. The class which has the highest membership probability is usually assigned that class label.</p>
+<p><img alt="image0" src="images/post.png" /></p>
+<p>What issues might occur if the probability of belonging to more than one class is very similar?</p>
+<p>There appear to be topographic effects in the class probability images: why would that be so? and what might you do about it?</p>
+</div>
+<div class="section" id="5.-Accuracy-Assessment">
+<h2>1.8. 5. Accuracy Assessment<a class="headerlink" href="#5.-Accuracy-Assessment" title="Permalink to this headline">¶</a></h2>
+<p>It is not very difficult to produce a classified map using earth observation data. You have now been through the process ofsupervised classification (using one method).</p>
+<p>How can we tell how good this is though?</p>
+<p>One thing you may wish to do is to examine the post-classification class statistics:</p>
+<p><img alt="image0" src="images/post.png" /></p>
+<p>There are various other options that you may find useful to explore in the Post Classification section of the toolbox.</p>
+<p>A vital part of the classification process though is an assessment of classification accuracy.</p>
+<p>This is generally done as a <a class="reference external" href="http://www.exelisvis.com/docs/CalculatingConfusionMatrices.html">confusion matrix</a>.</p>
+<p>In setting this up, you need either to have a ground truth ‘image’, or a set of ROIs that can be used for ground truth.</p>
+<p>You should first generate a new (independent) set of ROIs (or better still, use random samples) for your classes. If you use random samples, you can check what you think the land cover class should be using Google Earth/Maps as above.</p>
+<p>Once you have your confusion matrix, make sure that you understand what it is telling you (and as far as possible, why that is so).</p>
+<p>If the classification result seems poor, you can go back and edit your settings or class definitions and re-try, but try to keep the ROIs you use for checking independent of this process.</p>
+<p>Make sure you understand the terms we use to describe the different accuracies shown in the confusion matrix, and also <a class="reference external" href="http://www.exelisvis.com/docs/CalculatingConfusionMatrices.html">what a kappa coefficient is</a>.</p>
+</div>
+<div class="section" id="6.-Further-Work">
+<h2>1.9. 6. Further Work<a class="headerlink" href="#6.-Further-Work" title="Permalink to this headline">¶</a></h2>
+<p>In this practical, you have gone through the process of performing an image classification and assessing its accuracy.</p>
+<p>To finish the practical, you should classify <em>both</em> of the Landsat datasets you have, and calculate the change in forest area between the two dates. Since you have an accuracy assessment, it should be feasible for you to put an uncertainty on that estimate of change.</p>
+</div>
+<div class="section" id="7.-Summary">
+<h2>1.10. 7. Summary<a class="headerlink" href="#7.-Summary" title="Permalink to this headline">¶</a></h2>
+<p>The main aim of this practical is to reinforce your understanding of the classification process and for you to gain practical experience at this.</p>
+<p>It would be worthwhile exploring some of the options you have available (e.g. try some different classifiers).</p>
+<p>Since there is quite a lot of ‘button clicking’ in this exercise, <em>make sure</em> that you understand what you are doing and why you are getting the result you do – there is very little value in the exercise otherwise!</p>
+<p>If you have questions, ask the staff!</p>
+<p>If you are very interested in change detection, you could explore the <a class="reference external" href="http://www.exelisvis.com/docs/ChangeDetectionAnalysis.html">change detection options in ENVI</a>.</p>
+<p>[<a class="reference external" href="#Classification-using-ENVI-5.2">top</a>][<a class="reference external" href="ClassificationIntro.html#1.-Introduction">Introduction</a>] [<a class="reference external" href="Classification.html#2.-Examination-of-the-data">Examination of the data</a>][<a class="reference external" href="Classification.html#3.-Defining-spectral-classes">Defining spectral classes</a>] [<a class="reference external" href="Classification.html#4.-Image-Classification">Image Classification</a>][<a class="reference external" href="Classification.html#5.-Accuracy-Assessment">Accuracy Assessment</a>] [<a class="reference external" href="Classification.html#5.-Further-Work">Further
+Work</a>][<a class="reference external" href="Classification.html#5.-Summary">Summary</a>]</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">GEOG0027 Environmental Remote Sensing</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Classification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Aims">1.1. Aims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Advanced-use-of-these-notes">1.2. Advanced use of these notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Contents">1.3. Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.-Introduction">1.4. 1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#2.-Examination-of-the-data">1.5. 2. Examination of the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#3.-Defining-spectral-classes">1.6. 3. Defining spectral classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#4.-Image-Classification">1.7. 4. Image Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#5.-Accuracy-Assessment">1.8. 5. Accuracy Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#6.-Further-Work">1.9. 6. Further Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#7.-Summary">1.10. 7. Summary</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">GEOG0027 Environmental Remote Sensing</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, P Lewis.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/Classification.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

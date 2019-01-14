@@ -1,0 +1,310 @@
+{ "metadata": { "celltoolbar": "Raw Cell Format", "name": "",
+"signature":
+"sha256:6ede76ba5603dbd2cac242b9b9bdce75a7d26bd963349b16461e701430f8f35a"
+}, "nbformat": 3, "nbformat\_minor": 0, "worksheets": [ { "cells": [ {
+"cell\_type": "markdown", "metadata": {}, "source": [ ":raw-latex:`\n`"
+] }, { "cell\_type": "heading", "level": 1, "metadata": {}, "source": [
+"Classification using ENVI 5.2" ] }, { "cell\_type": "markdown",
+"metadata": {}, "source": [ "Prof. P. Lewis & Dr. M.
+Disney:raw-latex:`\n`", ":raw-latex:`\n`", "Remote Sensing
+Unit:raw-latex:`\n`", ":raw-latex:`\n`", "Dept.
+Geography:raw-latex:`\n`", ":raw-latex:`\n`", "UCL" ] }, { "cell\_type":
+"heading", "level": 2, "metadata": {}, "source": [ "Aims" ] }, {
+"cell\_type": "markdown", "metadata": {}, "source": [ "After completing
+this practical, you should be able to analyse one or more image datasets
+using classification methods. This includes learning to identify land
+cover classes in a dataset and consider class separability (using
+histograms, scatterplots and other tools), and applying and assessing a
+classification product using Envi. " ] }, { "cell\_type": "heading",
+"level": 2, "metadata": {}, "source": [ "Advanced use of these notes" ]
+}, { "cell\_type": "markdown", "metadata": {}, "source": [ "Although it
+is perfectly adequate to simply view the html (webpage) of these notes,
+there are some additional features in these notes that you can use (in
+this case, a convolution tool with sliders) if you access them in a
+different way. The reason this is possible is that these notes are
+written in an `ipython
+notebook <http://ipython.org/notebook.html>`__.:raw-latex:`\n`",
+":raw-latex:`\n`", "To use the notes as a notebook (assuming you have
+```git`` <http://git-scm.com>`__ and
+`python <http://continuum.io/downloads>`__ on your
+computer)::raw-latex:`\n`", ":raw-latex:`\n`", "1. Copy all of the notes
+to your local computer (**if for the first time**):raw-latex:`\n`",
+":raw-latex:`\n`", " mkdir -p ~/DATA/working:raw-latex:`\n`", " cd
+~/DATA/working:raw-latex:`\n`", ":raw-latex:`\n`", " git clone
+https://github.com/profLewis/geog2021.git:raw-latex:`\n`", "
+:raw-latex:`\n`", " cd geog2021:raw-latex:`\n`", " :raw-latex:`\n`", "2.
+Copy all of the notes to your local computer (**if for an
+update**):raw-latex:`\n`", ":raw-latex:`\n`", " cd
+~/DATA/working/geog2021:raw-latex:`\n`", ":raw-latex:`\n`", " git reset
+--hard HEAD:raw-latex:`\n`", " :raw-latex:`\n`", " git
+pull:raw-latex:`\n`", " :raw-latex:`\n`", "3. Run the
+notebook:raw-latex:`\n`", ":raw-latex:`\n`", " ipython notebook
+Classification.ipynb:raw-latex:`\n`", " :raw-latex:`\n`", " " ] }, {
+"cell\_type": "heading", "level": 2, "metadata": {}, "source": [
+"Contents" ] }, { "cell\_type": "markdown", "metadata": {}, "source": [
+"[`top <#Classification-using-ENVI-5.2>`__]:raw-latex:`\n`",
+"[`Introduction <ClassificationIntro.html#1.-Introduction>`__]:raw-latex:`\n`",
+"[`Examination of the
+data <Classification.html#2.-Examination-of-the-data>`__]:raw-latex:`\n`",
+"[`Defining spectral
+classes <Classification.html#3.-Defining-spectral-classes>`__]:raw-latex:`\n`",
+"[`Image
+Classification <Classification.html#4.-Image-Classification>`__]:raw-latex:`\n`",
+"[`Accuracy
+Assessment <Classification.html#5.-Accuracy-Assessment>`__]:raw-latex:`\n`",
+"[`Further
+Work <Classification.html#5.-Further-Work>`__]:raw-latex:`\n`",
+"[`Summary <Classification.html#5.-Summary>`__]" ] }, { "cell\_type":
+"heading", "level": 2, "metadata": {}, "source": [ "1. Introduction" ]
+}, { "cell\_type": "markdown", "metadata": {}, "source": [ "The datasets
+you need for this practical are available from::raw-latex:`\n`",
+":raw-latex:`\n`", ":raw-latex:`\n`", "\*
+`ETM-110801 <https://www.dropbox.com/s/z00xo5uxeeru70n/ETM-110801?dl=0>`__\ :raw-latex:`\n`",
+"\*
+`ETM-110801.HDR <https://github.com/profLewis/geog2021/blob/master/data/ETM-110801.HDR>`__\ :raw-latex:`\n`",
+"\*
+`TM-250792 <https://www.dropbox.com/s/6896izuizbnp6jp/TM-250792?dl=0>`__\ :raw-latex:`\n`",
+"\*
+`TM-250792.HDR <https://github.com/profLewis/geog2021/blob/master/data/TM-250792.HDR>`__\ :raw-latex:`\n`",
+"\*
+`SRTM-2002 <https://www.dropbox.com/s/dt3zvnhrbga18nv/SRTM-2002?dl=0>`__\ :raw-latex:`\n`",
+"\*
+`SRTM-2002.HDR <https://github.com/profLewis/geog2021/blob/master/data/TM-250792.HDR>`__\ :raw-latex:`\n`",
+":raw-latex:`\n`", ":raw-latex:`\n`", "You should download these data
+and put them in a directory (folder) that you will
+remember!:raw-latex:`\n`", ":raw-latex:`\n`", "See `Classification
+Introduction <ClassificationIntro.html>`__ for more details on the
+context and datasets.:raw-latex:`\n`" ] }, { "cell\_type": "heading",
+"level": 2, "metadata": {}, "source": [ "2. Examination of the
+data:raw-latex:`\n`" ] }, { "cell\_type": "markdown", "metadata": {},
+"source": [ "Load up the two images and examine the data. Try to
+identify the various classes you might like to obtain for this exercise
+decide how you can identify them. Examine feature space plots (scatter
+plots) to help you decide what may be feasible (and what may not). **You
+may decide that transformations of the data (e.g. band ratios or
+Principal Components) might aid your ability (and the computer's
+ability) to discriminate between classes**, but you should simply
+explore the data to start with." ] }, { "cell\_type": "code",
+"collapsed": false, "input": [ "# Don't worry about this -- its just to
+display the google maps:raw-latex:`\n`", "from IPython.display import
+HTML:raw-latex:`\n`", "HTML('')" ], "language": "python", "metadata":
+{}, "outputs": [ { "html": [ "" ], "metadata": {}, "output\_type":
+"pyout", "prompt\_number": 1, "text": [ "<IPython.core.display.HTML at
+0x108121c90>" ] } ], "prompt\_number": 1 }, { "cell\_type": "markdown",
+"metadata": {}, "source": [ "Some examples of the various classes you
+might consider (shown on a standard False Colour Composite (FCC)
+image)::raw-latex:`\n`", ":raw-latex:`\n`", "\|Class \| Notes \| Example
+\|:raw-latex:`\n`", "\| ---- \| ---- \| ---- \|:raw-latex:`\n`", "\|
+**Urban** \| May also include other 'built' structures such as roads.
+You should be able to recognise these from their spatial structure, even
+at this resolution \| |image0|\ \|:raw-latex:`\n`", "\| **Forest** \|
+This should be easy to spot, but there are sometime clear 'shading'
+effects (as in this example) that might complicate classification \|
+|image1|\ \|:raw-latex:`\n`", "\| **Rocks** \| Rocks are quite easily
+identifiable in the FCC images. You would generally expect them to be
+static between the two dates. \| |image2|\ \|:raw-latex:`\n`", "\|
+**Rivers** \| There are rivers and other water bodies in the scene,
+which you will be able to recognise by their shape. They will be
+difficult to use as training sites as they are quite narrow at this
+resolution. \| |image3|\ \|:raw-latex:`\n`", "\| **Farmland** \| You
+will see a broad patchwork of areas that have been cleared of forest and
+used to graze cattle or raise crops. The areas a quite easy to spot in
+the FCC images, but might represent a broad spectral class because of
+the various physical cover types involved \|
+|image4|\ \|:raw-latex:`\n`", "\| **Other** \| You may spot some areas
+that have rather different spectral properties to most of the other
+areas. One example is shown here of field-shaped areas (green and purple
+areas) that might be inferred to be farmland, but are clearly different
+spectrally to other areas of farmland. We cannot really determine what
+these areas are from the information available, so you might require an
+'other' class to cope with such eventualities. \|
+|image5|\ \|:raw-latex:`\n`", "\| **Cloud** \| The images may contain a
+small amount of cloud or smoke/haze, an example of which is shown here.
+They are quite easy to recognise visually in the FCC, but may be
+difficult to classify unless they are quite thick. If there are any
+thick clouds, you may see cloud shadows on the ground as well. \|
+|image6|\ \|:raw-latex:`\n`", ":raw-latex:`\n`", ":raw-latex:`\n`",
+":raw-latex:`\n`", "You may make use of Google Maps to explore detail of
+the areas, e.g., if you zoom in to the 'rock' area, you will find it is
+is actually more complex than just 'bare rock'::raw-latex:`\n`",
+":raw-latex:`\n`", "|image7|\ :raw-latex:`\n`", ":raw-latex:`\n`", "When
+deciding which classes may be appropriate to use, you should make use of
+your understanding of histograms and scatterplots, and use these to help
+explore the image information content." ] }, { "cell\_type": "heading",
+"level": 2, "metadata": {}, "source": [ "3. Defining spectral classes" ]
+}, { "cell\_type": "markdown", "metadata": {}, "source": [ "In order to
+classify the image data you are required to define a set of "signatures"
+which represent each class. These are then used to "train" the
+classification algorithm.:raw-latex:`\n`", ":raw-latex:`\n`", "In envi,
+you need to define these classes via ROIs (Regions of Interest). Select
+the ROI tool::raw-latex:`\n`", ":raw-latex:`\n`",
+"|image8|\ :raw-latex:`\n`", ":raw-latex:`\n`", "and outline an ROI you
+want to define with the tool::raw-latex:`\n`", ":raw-latex:`\n`",
+"|image9|\ :raw-latex:`\n`", ":raw-latex:`\n`", ":raw-latex:`\n`", "You
+may find the `'N-D
+visualiser' <http://www.exelisvis.com/docs/nDimensionalVisualizer.html>`__
+useful when doing this::raw-latex:`\n`", ":raw-latex:`\n`",
+"|image10|\ :raw-latex:`\n`", ":raw-latex:`\n`", "If you select only 2
+bands to view, you will see informatyion similar to the scatterplot
+(i.e. 2-dimensional). :raw-latex:`\n`", ":raw-latex:`\n`",
+"|image11|\ :raw-latex:`\n`", ":raw-latex:`\n`", "In such a view, you
+can readily 'see' how separable the classes might be.:raw-latex:`\n`",
+":raw-latex:`\n`", "In higher dimensions, the visualiser 'rotates' the
+view so you can get different perspectives on the
+classes:raw-latex:`\n`", ":raw-latex:`\n`",
+"|image12|\ :raw-latex:`\n`", ":raw-latex:`\n`", "Note that you will
+want to create an ROI for each class you are interested in, but that yoy
+can 'merge' (or delete) classes once you have created
+them.:raw-latex:`\n`", ":raw-latex:`\n`", "When you think you have a
+suitable set of ROIs, check the class separability::raw-latex:`\n`",
+":raw-latex:`\n`", "|image13|\ :raw-latex:`\n`", ":raw-latex:`\n`",
+"This outputs Divergence metrics between the classes you have defined.
+These values range between 0 and 2.0. As a guide to interpretation,
+values greater than 1.9 indicate good separability of classes. If class
+separability is less than this, you might consider splitting the classes
+for the classification and recombining them post-classification (e.g.
+have two classes: forest1 and forest2).:raw-latex:`\n`",
+":raw-latex:`\n`", "|image14|\ :raw-latex:`\n`", ":raw-latex:`\n`",
+":raw-latex:`\n`", ":raw-latex:`\n`", "Then, make sure you save them (to
+xml format)::raw-latex:`\n`", ":raw-latex:`\n`",
+"|image15|\ :raw-latex:`\n`", ":raw-latex:`\n`" ] }, { "cell\_type":
+"heading", "level": 2, "metadata": {}, "source": [ "4. Image
+Classification" ] }, { "cell\_type": "markdown", "metadata": {},
+"source": [ "To perform a classification, first look at the options in
+the Toolbox::raw-latex:`\n`", ":raw-latex:`\n`", ":raw-latex:`\n`",
+"|image16|\ :raw-latex:`\n`", ":raw-latex:`\n`", ":raw-latex:`\n`", "As
+a first attempt, try the `Maximum
+Likelihood <http://www.exelisvis.com/docs/MaximumLikelihood.html>`__
+classifier.:raw-latex:`\n`", ":raw-latex:`\n`", "A
+`Tutorial <http://www.exelisvis.com/portals/0/pdfs/envi/Classification_Methods.pdf>`__
+is available that will take you through some of the other
+options.:raw-latex:`\n`", ":raw-latex:`\n`", "For the `Maximum
+Likelihood <http://www.exelisvis.com/docs/MaximumLikelihood.html>`__
+classifier, slect this itme from the Toolbox::raw-latex:`\n`",
+":raw-latex:`\n`", "|image17|\ :raw-latex:`\n`", ":raw-latex:`\n`", "and
+perform any subsetting or masking that you might
+require.:raw-latex:`\n`", ":raw-latex:`\n`", "Then, select the Classes
+you want from the ROIs you have defined, along with making decisions
+about whether you want to save the result or not (if not, then just send
+it to 'memory', but it will not then be saved at the end of the
+session). If you do save the result, make sure you note down (in your
+notebook) what the file name was and what settings you used (e.g. which
+classes). :raw-latex:`\n`", ":raw-latex:`\n`",
+"|image18|\ :raw-latex:`\n`", ":raw-latex:`\n`", "You should now have a
+classification result::raw-latex:`\n`", ":raw-latex:`\n`",
+"|image19|\ :raw-latex:`\n`", ":raw-latex:`\n`" ] }, { "cell\_type":
+"markdown", "metadata": {}, "source": [ "It is generally very
+instructive to visualise the 'rule' image associated with a result. This
+provides you with the reasoning the computer used to obtain the result
+it did.:raw-latex:`\n`", ":raw-latex:`\n`", "For a method such as that
+used above, the training data are used to generate multivariate
+statistical distributions that we suppose to describe the full class.
+Each pixel then can be assigned a probability of class membership. The
+class which has the highest membership probability is usually assigned
+that class label.:raw-latex:`\n`", ":raw-latex:`\n`",
+"|image20|\ :raw-latex:`\n`", ":raw-latex:`\n`", "What issues might
+occur if the probability of belonging to more than one class is very
+similar?:raw-latex:`\n`", ":raw-latex:`\n`", "There appear to be
+topographic effects in the class probability images: why would that be
+so? and what might you do about it?" ] }, { "cell\_type": "heading",
+"level": 2, "metadata": {}, "source": [ "5. Accuracy Assessment" ] }, {
+"cell\_type": "markdown", "metadata": {}, "source": [ "It is not very
+difficult to produce a classified map using earth observation data. You
+have now been through the process ofsupervised classification (using one
+method).:raw-latex:`\n`", ":raw-latex:`\n`", "How can we tell how good
+this is though?:raw-latex:`\n`", ":raw-latex:`\n`", "One thing you may
+wish to do is to examine the post-classification class
+statistics::raw-latex:`\n`", ":raw-latex:`\n`",
+"|image21|\ :raw-latex:`\n`", ":raw-latex:`\n`", "There are various
+other options that you may find useful to explore in the Post
+Classification section of the toolbox." ] }, { "cell\_type": "markdown",
+"metadata": {}, "source": [ "A vital part of the classification process
+though is an assessment of classification accuracy.:raw-latex:`\n`",
+":raw-latex:`\n`", "This is generally done as a `confusion
+matrix <http://www.exelisvis.com/docs/CalculatingConfusionMatrices.html>`__.:raw-latex:`\n`",
+":raw-latex:`\n`", "In setting this up, you need either to have a ground
+truth 'image', or a set of ROIs that can be used for ground
+truth.:raw-latex:`\n`", ":raw-latex:`\n`", "You should first generate a
+new (independent) set of ROIs (or better still, use random samples) for
+your classes. If you use random samples, you can check what you think
+the land cover class should be using Google Earth/Maps as
+above.:raw-latex:`\n`", ":raw-latex:`\n`", "Once you have your confusion
+matrix, make sure that you understand what it is telling you (and as far
+as possible, why that is so).:raw-latex:`\n`", ":raw-latex:`\n`", "If
+the classification result seems poor, you can go back and edit your
+settings or class definitions and re-try, but try to keep the ROIs you
+use for checking independent of this process.:raw-latex:`\n`",
+":raw-latex:`\n`", "Make sure you understand the terms we use to
+describe the different accuracies shown in the confusion matrix, and
+also `what a kappa coefficient
+is <http://www.exelisvis.com/docs/CalculatingConfusionMatrices.html>`__."
+] }, { "cell\_type": "heading", "level": 2, "metadata": {}, "source": [
+"6. Further Work" ] }, { "cell\_type": "markdown", "metadata": {},
+"source": [ "In this practical, you have gone through the process of
+performing an image classification and assessing its
+accuracy.:raw-latex:`\n`", ":raw-latex:`\n`", "To finish the practical,
+you should classify *both* of the Landsat datasets you have, and
+calculate the change in forest area between the two dates. Since you
+have an accuracy assessment, it should be feasible for you to put an
+uncertainty on that estimate of change." ] }, { "cell\_type": "heading",
+"level": 2, "metadata": {}, "source": [ "7. Summary" ] }, {
+"cell\_type": "markdown", "metadata": {}, "source": [ "The main aim of
+this practical is to reinforce your understanding of the classification
+process and for you to gain practical experience at
+this.:raw-latex:`\n`", ":raw-latex:`\n`", "It would be worthwhile
+exploring some of the options you have available (e.g. try some
+different classifiers).:raw-latex:`\n`", ":raw-latex:`\n`", "Since there
+is quite a lot of 'button clicking' in this exercise, *make sure* that
+you understand what you are doing and why you are getting the result you
+do -- there is very little value in the exercise
+otherwise!:raw-latex:`\n`", ":raw-latex:`\n`", "If you have questions,
+ask the staff!:raw-latex:`\n`", ":raw-latex:`\n`", "If you are very
+interested in change detection, you could explore the `change detection
+options in
+ENVI <http://www.exelisvis.com/docs/ChangeDetectionAnalysis.html>`__." ]
+}, { "cell\_type": "markdown", "metadata": {}, "source": [
+"[`top <#Classification-using-ENVI-5.2>`__]:raw-latex:`\n`",
+"[`Introduction <ClassificationIntro.html#1.-Introduction>`__]:raw-latex:`\n`",
+"[`Examination of the
+data <Classification.html#2.-Examination-of-the-data>`__]:raw-latex:`\n`",
+"[`Defining spectral
+classes <Classification.html#3.-Defining-spectral-classes>`__]:raw-latex:`\n`",
+"[`Image
+Classification <Classification.html#4.-Image-Classification>`__]:raw-latex:`\n`",
+"[`Accuracy
+Assessment <Classification.html#5.-Accuracy-Assessment>`__]:raw-latex:`\n`",
+"[`Further
+Work <Classification.html#5.-Further-Work>`__]:raw-latex:`\n`",
+"[`Summary <Classification.html#5.-Summary>`__]" ] } ], "metadata": {} }
+] }
+
+.. |image0| image:: images/urban.gif
+   :target: images/urban.gif
+.. |image1| image:: images/forest.gif
+   :target: images/forest.gif
+.. |image2| image:: images/rocks.gif
+   :target: images/rocks.gif
+.. |image3| image:: images/rivers.gif
+   :target: images/rivers.gif
+.. |image4| image:: images/ranch.gif
+   :target: images/ranch.gif
+.. |image5| image:: images/other.gif
+   :target: images/other.gif
+.. |image6| image:: images/cloud.gif
+   :target: images/cloud.gif
+.. |image7| image:: images/mymovie.gif
+.. |image8| image:: images/roi.png
+.. |image9| image:: images/roii.png
+.. |image10| image:: images/send.png
+.. |image11| image:: images/btwo.png
+.. |image12| image:: images/classes.gif
+.. |image13| image:: images/sep.png
+.. |image14| image:: images/sep2.png
+.. |image15| image:: images/myclasses.png
+.. |image16| image:: images/opt.png
+.. |image17| image:: images/load.png
+.. |image18| image:: images/ml.png
+.. |image19| image:: images/pink.png
+.. |image20| image:: images/prob.png
+.. |image21| image:: images/post.png
+
