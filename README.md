@@ -75,8 +75,8 @@ N.B.
 |  | Thursday 09:00-10:00 | Thursday 11:00-12:00 | Friday 16:00-17:00 |
 | -------------------|  -------------------| :-----------------: | :------------------: |
 | Week 1 |  | | 11/1/19 LECTURE 1 [Introduction to course; Environmental Remote Sensing](docs/coursenotes/lecture1.pdf) |
-| Week 2 | 17/1/19 COMPUTING 1 [Introductory Computing](docs/unix.md)|17/1/19 COMPUTING 2 [Image Display](docs/ImageDisplay.ipynb)| 18/1/19 LECTURE 2 [Image Display and Enhancement](docs/coursenotes/lecture2.pdf) |
-| Week 3 | 24/1/19 COMPUTING 2 [Data download](docs/Download.ipynb)| 24/1/19 COMPUTING 2 [Image Display](docs/ImageDisplay.ipynb)| 25/1/19 LECTURE 3 [Spatial Information](docs/coursenotes/lecture3.pdf) |
+| Week 2 | 17/1/19 COMPUTING [Image Display](docs/ImageDisplay.ipynb)|17/1/19 COMPUTING [Image Display](docs/ImageDisplay.ipynb)| 18/1/19 LECTURE 2 [Image Display and Enhancement](docs/coursenotes/lecture2.pdf) |
+| Week 3 | 24/1/19 DOWNLOAD [Data download](docs/Download.ipynb)| 24/1/19 COMPUTING [Image Display](docs/ImageDisplay.ipynb)| 25/1/19 LECTURE 3 [Spatial Information](docs/coursenotes/lecture3.pdf) |
 | Week 4  | 31/1/19 COMPUTING 2 [Spatial Filtering](docs/SpatialFiltering.ipynb)| 31/1/19 COMPUTING 2 [Spatial Filtering](docs/SpatialFiltering.ipynb)| 01/2/19 LECTURE 4 [Image Classification](docs/coursenotes/lecture4.pdf) | 
 | Week 5 | 04/2/16 COMPUTING 3 [Classification](docs/Classification.ipynb)| 04/2/16 COMPUTING 3 [Classification](docs/Classification.ipynb)| 05/2/19 LECTURE 5 [Spectral Information](docs/coursenotes/lecture5.pdf) |
 | Week 6 | READING WEEK | READING WEEK | READING WEEK |

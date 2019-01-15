@@ -110,12 +110,12 @@ Timetable 2014-15
 |                |                |                | Sensing`_       |
 +----------------+----------------+----------------+-----------------+
 | Week 2         | 17/1/19        | 17/1/19        | 18/1/19 LECTURE |
-|                | COMPUTING 1    | COMPUTING 2    | 2 `Image        |
-|                | `Introductory  | `Image         | Display and     |
-|                | Computing`_    | Display`_      | Enhancement`_   |
+|                | COMPUTING      | COMPUTING      | 2 `Image        |
+|                | `Image         | `Image         | Display and     |
+|                | Display`_    | Display`_      | Enhancement`_   |
 +----------------+----------------+----------------+-----------------+
 | Week 3         | 24/1/19        | 24/1/19        | 25/1/19 LECTURE |
-|                | COMPUTING 2    | COMPUTING 2    | 3 `Spatial      |
+|                | DOWNLOAD       | COMPUTING     | 3 `Spatial      |
 |                | `Data          | `Image         | Information`_   |
 |                | download`_     | Display`_      |                 |
 +----------------+----------------+----------------+-----------------+
