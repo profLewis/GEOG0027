@@ -1,5 +1,5 @@
 ![UCL](docs/images//ucl_logo.png)
-![https://geog0027-environmental-remote-sensing.readthedocs.io/en/latest/](https://read-the-docs-guidelines.readthedocs-hosted.com/_downloads/logo-wordmark-light.png)
+![ReadTheDocs](https://geog0027-environmental-remote-sensing.readthedocs.io/en/latest/)
 
 # GEOG0027 Environmental Remote Sensing
 
