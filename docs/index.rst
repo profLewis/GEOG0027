@@ -1,7 +1,6 @@
 .. figure:: https://github.com/profLewis/Geog2021_Coursework/blob/master/images/ucl_logo.png?raw=true
    :alt: UCL
 
-   UCL
 
 GEOG0027 Environmental Remote Sensing
 =====================================
@@ -75,7 +74,7 @@ Assessment
 ''''''''''
 
 -  100% Assessed Practical (3500 words) - submission date standard 2nd
-   year submission date i.e. Fri 29th March 2019 (12 noon).
+   year submission date i.e. Fri 22th March 2019 (12 noon).
 
 N.B.
 
