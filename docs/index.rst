@@ -20,10 +20,6 @@ University College London
 
 |image0|
 
-[`Educational Aims and Objectives of the Course`_] [`Course workload and
-assessment`_] [`Timetable 2015-16`_] [`Reading List`_] [`How to run the
-practicals elsewhere`_]
-
 --------------
 
 Educational Aims and Objectives of the Course
