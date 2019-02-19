@@ -13,7 +13,7 @@ y_ramp *= 2
 
 size = 7
 filt = [1./size]*7
-print 'filter',filt
+print ('filter',filt)
 
 plt.figure(1,figsize=(15,10))
 plt.subplot(221)

@@ -14,8 +14,8 @@ y_ramp *= 2
 size = 7
 filts = np.array([1./size]*size)
 filt = [1.0,-2.0, 1.0]
-print 'filter 1:        ',str(['%4.2f'%i for i in filt]).replace("'",'')
-print 'filter 2:        ',str(['%4.2f'%i for i in filts]).replace("'",'')
+print ('filter 1:        ',str(['%4.2f'%i for i in filt]).replace("'",''))
+print ('filter 2:        ',str(['%4.2f'%i for i in filts]).replace("'",''))
 
 
 plt.figure(1,figsize=(15,10))
@@ -27,7 +27,7 @@ fy_steps = np.convolve(fy_step, filts,'same')
 fy_ramps = np.convolve(fy_ramp, filts,'same')
 
 filt2 = np.convolve(filt, filts,'full')
-print 'combined filter: ',str(['%4.2f'%i for i in filt2]).replace("'",'')
+print ('combined filter: ',str(['%4.2f'%i for i in filt2]).replace("'",''))
 
 fy_steps = np.convolve(fy_step, filts,'same')
 fy_ramps = np.convolve(fy_ramp, filts,'same')
