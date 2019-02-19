@@ -195,7 +195,7 @@ Contents
    :numbered:
    :maxdepth: 3
 
-
+   Introduction <Intro.ipynb>
    Image Display <ImageDisplay.ipynb>
    Data Download <Download.ipynb>
    Spatial Filtering <SpatialFiltering.ipynb>
