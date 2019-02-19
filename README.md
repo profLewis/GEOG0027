@@ -2,7 +2,7 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/profLewis/GEOG0027.git/master)
 
-[ReadTheDocs](https://geog0027-environmental-remote-sensing.readthedocs.io/en/latest/)
+[ReadTheDocs](https://geog0027.readthedocs.io/en/latest/)
 
 # GEOG0027 Environmental Remote Sensing
 
