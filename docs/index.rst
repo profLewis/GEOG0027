@@ -22,63 +22,6 @@ University College London
 
 --------------
 
-Educational Aims and Objectives of the Course
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To enable the students to:
-
--  Understand the nature of remote sensing data and how they are
-   acquired
--  Understand different types of remote sensing instruments and their
-   missions
--  Understand basic image representation and processing
--  Understand how Earth Observation data can be combined with other
-   sources of data and data techniques (e.g. GIS)
--  Understand how EO data can be used in environmental science
-   (particularly via classification and monitoring)
--  Develop practical skills in these areas, which may be useful in
-   planning of dissertations
--  Develop links with the second year course on Geographic Information
-   Systems Science and with othet courses as appropriate
-   (e.g. hydrology, environmental systems)
--  Lay the foundations for the third year course on Earth Observation
-
---------------
-
-Course workload and assessment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Expected Course Load
-''''''''''''''''''''
-
-======================================= =====
-Component                               Hours
-======================================= =====
-Lectures                                8
-Private Reading                         80
-Supervised Laboratory Work (Computing)  24
-Independent Laboratory Work (Computing) 20
-Required Written Work                   10
-TOTAL                                   142
-======================================= =====
-
-Usual range 100-150 for 1/2 course unit
-
---------------
-
-Assessment
-''''''''''
-
--  100% Assessed Practical (3500 words) - submission date standard 2nd
-   year submission date i.e. Fri 22th March 2019 (12 noon).
-
-N.B.
-
--  Penalties for late submission and over length WILL be applied
--  Different arrangements for JYA/Socrates (make sure you inform the
-   lecturers if this affects you)
-
---------------
 
 .. _Prof. P. Lewis: http://www2.geog.ucl.ac.uk/~plewis
 .. _Prof. M. Disney: http://www2.geog.ucl.ac.uk/~mdisney
@@ -91,7 +34,7 @@ N.B.
 
 .. |image0| image:: images/europe.jpg
 
-Timetable 2014-15
+Timetable 2018-19
 ^^^^^^^^^^^^^^^^^
 
 +----------------+----------------+----------------+-----------------+
@@ -155,18 +98,6 @@ Computing in Pearson Building, UNIX Computer lab, `Pearson 110a`_
 
 --------------
 
-Reading List
-^^^^^^^^^^^^
-
--  Jensen, John R. (2006) Remote Sensing of the Environment: an Earth
-   Resources Perspective, Hall and Prentice, New Jersey, 2nd ed.
--  Jensen, John R. (1995, 2004) Introductory Digital Image Processing: A
-   Remote Sensing Perspective (Prentice Hall Series in Geographic
-   Information Science)
--  Jones, H. G and Vaughan, R. A. (2010) Remote Sensing of Vegetation,
-   OUP, Oxford.
--  Lillesand, T., Kiefer, R. and Chipman, J. (2004) Remote Sensing and
-   Image Interpretation. John
 
 .. _Introduction to course; Environmental Remote Sensing: ../coursenotes/lecture1.pdf
 .. _Introductory Computing: unix.md
@@ -201,7 +132,7 @@ Contents
    Spatial Filtering <SpatialFiltering.ipynb>
    Classification Introduction <ClassificationIntro.ipynb>
    Classification <Classification.ipynb>
-
+   Coursework <Coursework.ipynb>
 Search
 ==================
 
