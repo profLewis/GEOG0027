@@ -37,7 +37,6 @@ University College London
 + Understand how EO data can be used in environmental science (particularly via classification and monitoring)
 + Develop practical skills in these areas, which may be useful in planning of dissertations
 + Develop links with the second year course on Geographic Information Systems Science and with othet courses as appropriate (e.g. hydrology, environmental systems)
-+ Lay the foundations for the third year course on Earth Observation
 
 -----------------------------------
 
