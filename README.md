@@ -44,6 +44,7 @@ University College London
 #### <a name="workload">Course workload and assessment</a>
 
 ##### Expected Course Load
+
 |Component 	|Hours|
 |-------  | :--------:|
 | Lectures | 	8|
@@ -105,24 +106,3 @@ Computing in Pearson Building, UNIX Computer lab, [Pearson 110a](https://www.ucl
 - Lillesand, T., Kiefer, R. and Chipman, J. (2004) Remote Sensing and Image Interpretation. John Wiley and Sons, NY, 5th ed.
 - Mather, P. (2004) Computer processing of remotely sensed images: an introduction 
 
-
------------------------------------
-
-
-
-#### <a name="elsewhere">How to run the practicals elsewhere</a>
-
-You can download all of the notes and practicals from this site.
-
-To run the practic
-als, you will need access to [ENVI](http://swdb.ucl.ac.uk/package/view/id/142?filter=envi) and the datasets associated with each practical.
-
-Note that installing IDL/Envi is likely to take around 2.5 GB of space.
-
-If you download ENVI for offsite use, make sure you also sort the license: follow the [installation instructions](http://swdb.ucl.ac.uk/package/view/id/142). 
-
-You can also run the practicals using [desktop@UCL Anywhere](http://www.ucl.ac.uk/isd/services/desktops/students/desktop-anywhere)
-
-![desktop@UCL Anywhere](docs/images/desktop-ucl-anywhere-logo-globe.jpg?raw=true)
-
-To get the course notes and datasets onto your computer, go to the [course github page](https://github.com/profLewis/GEOG0027.git) and clone or download the git.
